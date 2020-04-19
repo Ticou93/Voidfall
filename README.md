@@ -12,3 +12,11 @@ Game Engine
  3. Done, you can now develop within the Vf solution!
  
  
+================= LINKS =========================
+ 
+In case you want to try and build your own engine: https://github.com/bkaradzic/bgfx
+BGFX renders with in this scenario with the help of GLFW and GLEW.
+
+================= END ============================
+ 
+ 
