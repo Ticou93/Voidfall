@@ -14,8 +14,10 @@ Game Engine
  
 ================= LINKS =========================
  
-In case you want to try and build your own engine: https://github.com/bkaradzic/bgfx
-BGFX renders with in this scenario with the help of GLFW and GLEW.
+In case you want to try and build your own engine: 
+BGFX: https://github.com/bkaradzic/bgfx
+GLEW: http://glew.sourceforge.net/
+GLFW: https://www.glfw.org/download.html
 
 ================= END ============================
  
