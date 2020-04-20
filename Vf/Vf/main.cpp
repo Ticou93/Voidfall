@@ -16,7 +16,7 @@
 #include "GLFW/glfw3native.h"
 
 // Window dimensions 
-const GLint WIDTH = 800, HEIGHT = 600;
+const GLint WIDTH = 1200, HEIGHT = 720;
 uint32_t reset = BGFX_RESET_VSYNC;
 
 int main(void)
