@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <iostream> 
 #include <fstream>
-
 // BGFX
 #include <bgfx/c99/bgfx.h>
 #include <bgfx/platform.h>
@@ -15,6 +14,9 @@
 #define GLFW_EXPOSE_NATIVE_WIN32
 #include "GLFW/glfw3native.h"
 
+#include "audio.h"
+
+
 // Window dimensions 
 const GLint WIDTH = 800, HEIGHT = 600;
 uint32_t reset = BGFX_RESET_VSYNC;
@@ -22,7 +24,7 @@ uint32_t reset = BGFX_RESET_VSYNC;
 int main(void)
 {
 	glfwInit();
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Hello, bgfx!", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Voidfall x64", NULL, NULL);
 
 	bgfx_platform_data_t pd;
 	pd.nwh = glfwGetWin32Window(window);
@@ -44,7 +46,8 @@ int main(void)
 	bgfx_set_view_clear;
 	bgfx_set_view_rect;
 
-	while(true)
+	while (true)
+		playSound();
 		bgfx_frame;
 
 	return 0;

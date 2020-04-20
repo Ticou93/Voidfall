@@ -1,9 +1,34 @@
 ﻿  main.cpp
 C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\bgfx.h(20,1): warning C4005: 'BGFX_INVALID_HANDLE': macro redefinition
 C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\c99\bgfx.h(26): message : see previous definition of 'BGFX_INVALID_HANDLE'
+<<<<<<< Updated upstream
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(29,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(41,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(44,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(45,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(48,3): warning C4551: function call missing argument list
+=======
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(31,2): warning C4551: function call missing argument list
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(43,2): warning C4551: function call missing argument list
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(46,2): warning C4551: function call missing argument list
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(47,2): warning C4551: function call missing argument list
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(51,3): warning C4551: function call missing argument list
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(112,1): warning C4267: 'argument': conversion from 'size_t' to 'ALsizei', possible loss of data
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(366): message : see reference to function template instantiation 'bool alCallImpl<void(__cdecl *)(ALuint,ALenum,const ALvoid *,ALsizei,ALsizei),ALuint,ALenum,_Ty*,unsigned __int64,int32_t>(const char *,const uint_fast32_t,alFunction,ALuint,ALenum,_Ty *,unsigned __int64,int32_t)' being compiled
+          with
+          [
+              _Ty=char,
+              alFunction=void (__cdecl *)(ALuint,ALenum,const ALvoid *,ALsizei,ALsizei)
+          ]
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(113,34): warning C4244: 'argument': conversion from '_Ty' to 'ALfloat', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(371): message : see reference to function template instantiation 'bool alCallImpl<void(__cdecl *)(ALuint,ALenum,ALfloat),ALuint,int,int>(const char *,const uint_fast32_t,alFunction,ALuint,int,int)' being compiled
+          with
+          [
+              alFunction=void (__cdecl *)(ALuint,ALenum,ALfloat)
+          ]
+>>>>>>> Stashed changes
   Vf.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Debug\Vf.exe
