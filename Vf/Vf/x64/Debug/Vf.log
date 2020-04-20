@@ -3,12 +3,15 @@ C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\bgfx.h(20,1): warning C
 C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\c99\bgfx.h(26): message : see previous definition of 'BGFX_INVALID_HANDLE'
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(29,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(41,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(44,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(45,2): warning C4551: function call missing argument list
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(48,3): warning C4551: function call missing argument list
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(31,2): warning C4551: function call missing argument list
@@ -34,6 +37,9 @@ C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(371): message : see referen
               alFunction=void (__cdecl *)(ALuint,ALenum,ALfloat)
           ]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
