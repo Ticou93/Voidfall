@@ -1,9 +1,0 @@
-﻿  main.cpp
-C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\bgfx.h(20,1): warning C4005: 'BGFX_INVALID_HANDLE': macro redefinition
-C:\Users\Tim\Desktop\Voidfall\Voidfall\bgfx\include\bgfx\c99\bgfx.h(26): message : see previous definition of 'BGFX_INVALID_HANDLE'
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(29,2): warning C4551: function call missing argument list
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(41,2): warning C4551: function call missing argument list
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(44,2): warning C4551: function call missing argument list
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(45,2): warning C4551: function call missing argument list
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\main.cpp(48,3): warning C4551: function call missing argument list
-  Vf.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Debug\Vf.exe
