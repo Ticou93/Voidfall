@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 #include <al.h>
 #include <alc.h>
 
@@ -310,7 +308,53 @@ char* load_wav(const std::string& filename,
     return data;
 }
 
-int playSound()
+const std::size_t NUM_BUFFERS = 4;
+const std::size_t BUFFER_SIZE = 65536; // 32kb of data in each buffer
+
+void update_stream(const ALuint source,
+    const ALenum& format,
+    const std::int32_t& sampleRate,
+    const std::vector<char>& soundData,
+    std::size_t& cursor)
+{
+    ALint buffersProcessed = 0;
+    alCall(alGetSourcei, source, AL_BUFFERS_PROCESSED, &buffersProcessed);
+
+    if (buffersProcessed <= 0)
+        return;
+
+    while (buffersProcessed--)
+    {
+        ALuint buffer;
+        alCall(alSourceUnqueueBuffers, source, 1, &buffer);
+
+        ALsizei dataSize = BUFFER_SIZE;
+
+        char* data = new char[dataSize];
+        std::memset(data, 0, dataSize);
+
+        std::size_t dataSizeToCopy = BUFFER_SIZE;
+        if (cursor + BUFFER_SIZE > soundData.size())
+            dataSizeToCopy = soundData.size() - cursor;
+
+        std::memcpy(&data[0], &soundData[cursor], dataSizeToCopy);
+        cursor += dataSizeToCopy;
+
+        if (dataSizeToCopy < BUFFER_SIZE)
+        {
+            cursor = 0;
+            std::memcpy(&data[dataSizeToCopy], &soundData[cursor], BUFFER_SIZE - dataSizeToCopy);
+            cursor = BUFFER_SIZE - dataSizeToCopy;
+        }
+
+        alCall(alBufferData, buffer, format, data, BUFFER_SIZE, sampleRate);
+        alCall(alSourceQueueBuffers, source, 1, &buffer);
+
+        delete[] data;
+    }
+}
+
+int playSound(std::string soundToPlay)
 {
     ALCdevice* openALDevice = alcOpenDevice(nullptr);
     if (!openALDevice)
@@ -334,7 +378,7 @@ int playSound()
     std::int32_t sampleRate;
     std::uint8_t bitsPerSample;
     ALsizei dataSize;
-    char* rawSoundData = load_wav("../testy.wav", channels, sampleRate, bitsPerSample, dataSize);
+    char* rawSoundData = load_wav(soundToPlay, channels, sampleRate, bitsPerSample, dataSize);
     if (rawSoundData == nullptr || dataSize == 0)
     {
         std::cerr << "ERROR: Could not load wav" << std::endl;
@@ -342,10 +386,12 @@ int playSound()
     }
     std::vector<char> soundData(rawSoundData, rawSoundData + dataSize);
 
-    ALuint buffer;
-    alCall(alGenBuffers, 1, &buffer);
+    ALuint buffers[NUM_BUFFERS];
+
+    alCall(alGenBuffers, NUM_BUFFERS, &buffers[0]);
 
     ALenum format;
+
     if (channels == 1 && bitsPerSample == 8)
         format = AL_FORMAT_MONO8;
     else if (channels == 1 && bitsPerSample == 16)
@@ -363,8 +409,10 @@ int playSound()
         return 0;
     }
 
-    alCall(alBufferData, buffer, format, soundData.data(), soundData.size(), sampleRate);
-    soundData.clear(); // erase the sound in RAM
+    for (std::size_t i = 0; i < NUM_BUFFERS; ++i)
+    {
+        alCall(alBufferData, buffers[i], format, &soundData[i * BUFFER_SIZE], BUFFER_SIZE, sampleRate);
+    }
 
     ALuint source;
     alCall(alGenSources, 1, &source);
@@ -373,19 +421,23 @@ int playSound()
     alCall(alSource3f, source, AL_POSITION, 0, 0, 0);
     alCall(alSource3f, source, AL_VELOCITY, 0, 0, 0);
     alCall(alSourcei, source, AL_LOOPING, AL_FALSE);
-    alCall(alSourcei, source, AL_BUFFER, buffer);
+
+    alCall(alSourceQueueBuffers, source, NUM_BUFFERS, &buffers[0]);
 
     alCall(alSourcePlay, source);
 
     ALint state = AL_PLAYING;
 
+    std::size_t cursor = BUFFER_SIZE * NUM_BUFFERS;
+
     while (state == AL_PLAYING)
     {
+        update_stream(source, format, sampleRate, soundData, cursor);
         alCall(alGetSourcei, source, AL_SOURCE_STATE, &state);
     }
 
     alCall(alDeleteSources, 1, &source);
-    alCall(alDeleteBuffers, 1, &buffer);
+    alCall(alDeleteBuffers, NUM_BUFFERS, &buffers[0]);
 
     alcCall(alcMakeContextCurrent, contextMadeCurrent, openALDevice, nullptr);
     alcCall(alcDestroyContext, openALDevice, openALContext);
