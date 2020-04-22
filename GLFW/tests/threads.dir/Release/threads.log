@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/GLFW/tests/CMakeLists.txt
+  threads.c
+  tinycthread.c
+  glad_gl.c
+  Generating Code...
+  threads.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\GLFW\tests\Release\threads.exe

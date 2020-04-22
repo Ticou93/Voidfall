@@ -1,0 +1,7 @@
+﻿  Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/GLFW/tests/CMakeLists.txt
+  glfwinfo.c
+  getopt.c
+  glad_gl.c
+  glad_vulkan.c
+  Generating Code...
+  glfwinfo.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\GLFW\tests\Debug\glfwinfo.exe
