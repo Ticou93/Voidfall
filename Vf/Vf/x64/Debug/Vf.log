@@ -1,18 +1,4 @@
-﻿  main.cpp
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(110,1): warning C4267: 'argument': conversion from 'size_t' to 'ALsizei', possible loss of data
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(350): message : see reference to function template instantiation 'bool alCallImpl<void(__cdecl *)(ALuint,ALenum,const ALvoid *,ALsizei,ALsizei),ALuint,ALenum,char*,size_t,int32_t>(const char *,const uint_fast32_t,alFunction,ALuint,ALenum,char *,size_t,int32_t)' being compiled
-          with
-          [
-              alFunction=void (__cdecl *)(ALuint,ALenum,const ALvoid *,ALsizei,ALsizei)
-          ]
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(111,34): warning C4244: 'argument': conversion from '_Ty' to 'ALfloat', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\Vf\audio.h(419): message : see reference to function template instantiation 'bool alCallImpl<void(__cdecl *)(ALuint,ALenum,ALfloat),ALuint,int,int>(const char *,const uint_fast32_t,alFunction,ALuint,int,int)' being compiled
-          with
-          [
-              alFunction=void (__cdecl *)(ALuint,ALenum,ALfloat)
-          ]
+﻿  Game.cpp
+  main.cpp
+  Generating Code...
   Vf.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Debug\Vf.exe

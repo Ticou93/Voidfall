@@ -1,0 +1,59 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCXXCompilerFlag.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckCXXSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckIncludeFiles.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckStructHasMember.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindGit.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.17/Modules/SelectLibraryConfigurations.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/3.17.1/CMakeCCompiler.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/3.17.1/CMakeCXXCompiler.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/3.17.1/CMakeRCCompiler.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/3.17.1/CMakeSystem.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindALSA.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindAudioIO.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindDSound.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindJACK.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindMySOFA.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindOSS.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindOpenSL.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindPortAudio.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindPulseAudio.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindSDL2.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindSndFile.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindSoundIO.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/cmake/FindWindowsSDK.cmake
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/config.h.in
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/openal.pc.in
+C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/version.h.in

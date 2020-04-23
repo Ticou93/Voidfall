@@ -1,0 +1,5 @@
+﻿  Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt
+  alrecord.c
+C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\examples\alrecord.c(57,1): warning C4204: nonstandard extension used: non-constant aggregate initializer
+C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\examples\alrecord.c(63,1): warning C4204: nonstandard extension used: non-constant aggregate initializer
+  alrecord.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\Debug\alrecord.exe

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\273a2a6b9a2165b5a1cc8a0f032a0872\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DCA4E273-ADB7-33A1-B6DF-81FC9C6E8EC6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

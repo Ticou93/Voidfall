@@ -1,3 +1,9 @@
-﻿main.obj : error LNK2001: unresolved external symbol "bool __cdecl bgfx::init(struct bgfx::Init const &)" (?init@bgfx@@YA_NAEBUInit@1@@Z)
-main.obj : error LNK2001: unresolved external symbol "public: __cdecl bgfx::Init::Init(void)" (??0Init@bgfx@@QEAA@XZ)
-C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Release\Vf.exe : fatal error LNK1120: 2 unresolved externals
+﻿  Game.cpp
+  main.cpp
+     Creating library C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Release\Vf.lib and object C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Release\Vf.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 280 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Vf.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\Vf\x64\Release\Vf.exe

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ED2AAB0D-BDF6-3701-B0A9-8B31252A0A31}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>alrecord</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">alrecord.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">alrecord</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">alrecord.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">alrecord</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">alrecord.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">alrecord</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">alrecord.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">alrecord</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14640</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4065;4268;4324;5030</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Debug\ex-common.lib;Debug\OpenAL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Debug/alrecord.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Debug/alrecord.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14640</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4065;4268;4324;5030</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Release\ex-common.lib;Release\OpenAL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Release/alrecord.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Release/alrecord.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14640</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DisableSpecificWarnings>4065;4268;4324;5030</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\ex-common.lib;MinSizeRel\OpenAL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/MinSizeRel/alrecord.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/MinSizeRel/alrecord.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /w14640</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4065;4268;4324;5030</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;_WIN32_WINNT=0x0502;_CRT_SECURE_NO_WARNINGS;NOMINMAX;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\ex-common.lib;RelWithDebInfo\OpenAL32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/RelWithDebInfo/alrecord.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/RelWithDebInfo/alrecord.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft -BC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft --check-stamp-file C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeSystem.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindALSA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindAudioIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindDSound.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindJACK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindMySOFA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOSS.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOpenSL.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPortAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPulseAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSDL2.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSndFile.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSoundIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindWindowsSDK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\config.h.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\openal.pc.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft -BC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft --check-stamp-file C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeSystem.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindALSA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindAudioIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindDSound.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindJACK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindMySOFA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOSS.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOpenSL.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPortAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPulseAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSDL2.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSndFile.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSoundIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindWindowsSDK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\config.h.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\openal.pc.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft -BC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft --check-stamp-file C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeSystem.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindALSA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindAudioIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindDSound.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindJACK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindMySOFA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOSS.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOpenSL.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPortAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPulseAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSDL2.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSndFile.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSoundIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindWindowsSDK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\config.h.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\openal.pc.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft -BC:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft --check-stamp-file C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\SelectLibraryConfigurations.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeCXXCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeRCCompiler.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\3.17.1\CMakeSystem.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindALSA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindAudioIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindDSound.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindJACK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindMySOFA.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOSS.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindOpenSL.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPortAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindPulseAudio.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSDL2.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSndFile.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindSoundIO.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\cmake\FindWindowsSDK.cmake;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\config.h.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\openal.pc.in;C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\version.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\examples\alrecord.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\ZERO_CHECK.vcxproj">
+      <Project>{896304A6-1BBA-382E-96EB-F12B701F5E47}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\OpenAL.vcxproj">
+      <Project>{AC3559A4-2FFB-31A7-960E-FF08824B33F4}</Project>
+      <Name>OpenAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\ex-common.vcxproj">
+      <Project>{8340F571-8CAC-3446-81A9-A97A44E104A6}</Project>
+      <Name>ex-common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

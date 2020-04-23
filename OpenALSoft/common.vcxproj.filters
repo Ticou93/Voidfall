@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alcomplex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alexcpt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alfstream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\almalloc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alstring.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\bsinc_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\dynload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\polyphase_resampler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\strutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\threads.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\albyte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alcomplex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alexcpt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alfstream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\almalloc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alnumeric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\aloptional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alspan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\alstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\atomic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\bsinc_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\bsinc_tables.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\dynload.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\endiantest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\intrusive_ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\math_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\opthelpers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\polyphase_resampler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\pragmadefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\strutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\threads.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\vecmat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\common\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A96902DB-2DD2-304B-91D5-0B61FD456802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{69B1D73B-E9EB-369E-B2D8-355884A2E9CF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

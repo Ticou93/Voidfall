@@ -1,0 +1,64 @@
+﻿  Generating hrtf_default.h
+  Building Custom Rule C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/CMakeLists.txt
+  auxeffectslot.cpp
+  buffer.cpp
+  effect.cpp
+  error.cpp
+  event.cpp
+  extension.cpp
+  filter.cpp
+  listener.cpp
+  source.cpp
+  state.cpp
+  alc.cpp
+  alu.cpp
+  alconfig.cpp
+  ambdec.cpp
+  bformatdec.cpp
+  bs2b.cpp
+  converter.cpp
+  cpu_caps.cpp
+  autowah.cpp
+  chorus.cpp
+  Generating Code...
+  Compiling...
+  compressor.cpp
+  dedicated.cpp
+  distortion.cpp
+  echo.cpp
+  equalizer.cpp
+  fshifter.cpp
+  modulator.cpp
+  pshifter.cpp
+  reverb.cpp
+  vmorpher.cpp
+  biquad.cpp
+  nfc.cpp
+  splitter.cpp
+  fpu_ctrl.cpp
+  helpers.cpp
+  hrtf.cpp
+  mastering.cpp
+  panning.cpp
+  ringbuffer.cpp
+  uhjfilter.cpp
+  Generating Code...
+  Compiling...
+  uiddefs.cpp
+  voice.cpp
+  mixer_c.cpp
+  mixer_sse.cpp
+  mixer_sse2.cpp
+  mixer_sse3.cpp
+  mixer_sse41.cpp
+  base.cpp
+  loopback.cpp
+  winmm.cpp
+  dsound.cpp
+  wasapi.cpp
+  wave.cpp
+  Generating Code...
+  null.cpp
+  null.cpp
+     Creating library C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Debug/OpenAL32.lib and object C:/Users/Tim/Desktop/Voidfall/Voidfall/OpenALSoft/Debug/OpenAL32.exp
+  OpenAL.vcxproj -> C:\Users\Tim\Desktop\Voidfall\Voidfall\OpenALSoft\Debug\OpenAL32.dll
