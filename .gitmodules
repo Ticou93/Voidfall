@@ -7,3 +7,6 @@
 [submodule "deps/bgfx/bimg"]
 	path = deps/bgfx/bimg
 	url = https://github.com/bkaradzic/bimg.git
+[submodule "deps/glfw"]
+	path = deps/glfw
+	url = https://github.com/glfw/glfw.git
