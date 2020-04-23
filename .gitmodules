@@ -8,3 +8,12 @@
 	path = deps/bgfx/bimg
 	url = https://github.com/bkaradzic/bimg.git
 
+[submodule "deps/bgfx/bgfx"]
+	path = deps/bgfx/bgfx
+	url = https://github.com/bkaradzic/bgfx.git
+[submodule "deps/bgfx/bx"]
+	path = deps/bgfx/bx
+	url = https://github.com/bkaradzic/bx.git
+[submodule "deps/bgfx/bimg"]
+	path = deps/bgfx/bimg
+	url = https://github.com/bkaradzic/bimg.git
