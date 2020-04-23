@@ -1,13 +1,3 @@
-[submodule "bgfx"]
-	path = deps/bgfx/bgfx
-	url = https://github.com/bkaradzic/bgfx.git
-[submodule "bx"]
-	path = deps/bgfx/bx
-	url = https://github.com/bkaradzic/bx.git
-[submodule "bimg"]
-	path = deps/bgfx/bimg
-	url = https://github.com/bkaradzic/bimg.git
-
 [submodule "deps/bgfx/bgfx"]
 	path = deps/bgfx/bgfx
 	url = https://github.com/bkaradzic/bgfx.git
