@@ -1,51 +1,75 @@
 #include <stdio.h>
-#include <iostream> 
+#include <iostream>
 #include <fstream>
 
 // BGFX
-#include <bgfx/c99/bgfx.h>
+//#include <bx/bx.h>
+#include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
 
-// GLEW 
-#define GLEW_STATIC 
-#include <GL/glew.h> 
+// GLEW
+//#define GLEW_STATIC
+#include <GL/glew.h>
 
-// GLFW 
-#include <GLFW/glfw3.h> 
+// GLFW
+#if BX_PLATFORM_LINUX
+#define GLFW_EXPOSE_NATIVE_X11
+#elif BX_PLATFORM_WINDOWS
 #define GLFW_EXPOSE_NATIVE_WIN32
-#include "GLFW/glfw3native.h"
+#elif BX_PLATFORM_OSX
+#define GLFW_EXPOSE_NATIVE_COCOA
+#endif
+//#include "logo.h"
+#include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>
 
-// Window dimensions 
+// Window dimensions
 const GLint WIDTH = 800, HEIGHT = 600;
 uint32_t reset = BGFX_RESET_VSYNC;
 
 int main(void)
 {
 	glfwInit();
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Hello, bgfx!", NULL, NULL);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Hello, bgfx!", nullptr, nullptr);
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+	if (!window)
+		return 1;
+	//glfwSetKeyCallback(window, glfw_keyCallback);
 
-	bgfx_platform_data_t pd;
-	pd.nwh = glfwGetWin32Window(window);
-	bgfx_set_platform_data;
+    bgfx::renderFrame();
 
-	bgfx_init_t bgfxInit;
+    bgfx::Init init;
+    #if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
+	init.platformData.ndt = glfwGetX11Display();
+	init.platformData.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
+    #elif BX_PLATFORM_OSX
+	init.platformData.nwh = glfwGetCocoaWindow(window);
+    #elif BX_PLATFORM_WINDOWS
+	init.platformData.nwh = glfwGetWin32Window(window);
+    #endif
+
+	//bgfx_set_platform_data;
+
+	//bgfx_init_t bgfxInit;
 
 	// Automactiaclly choose renderer.
-	bgfxInit.type = BGFX_RENDERER_TYPE_COUNT;
+	//init.type = BGFX_RENDERER_TYPE_COUNT;
 
-	bgfxInit.resolution.width = WIDTH;
-	bgfxInit.resolution.height = HEIGHT;
-	bgfxInit.resolution.reset = BGFX_RESET_VSYNC;
+	init.resolution.width = WIDTH;
+	init.resolution.height = HEIGHT;
+	init.resolution.reset = BGFX_RESET_VSYNC;
 
 	// Returns true if init is successful
-	bgfx_init;
+    if (!bgfx::init(init))
+        return 1;
 
-	// Draw
-	bgfx_set_view_clear;
-	bgfx_set_view_rect;
+    const bgfx::ViewId kClearView = 0;
+	bgfx::setViewClear(kClearView, BGFX_CLEAR_COLOR);
+	bgfx::setViewRect(kClearView, 0, 0, bgfx::BackbufferRatio::Equal);
 
 	while(true)
-		bgfx_frame;
+		bgfx::frame();
 
+    bgfx::shutdown();
 	return 0;
 }
