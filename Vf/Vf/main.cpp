@@ -19,7 +19,7 @@ void gameThread() {
 
 void audioThread() {
 	audio = new Audio();
-	audio->playSound("../testy.wav");
+	audio->playSound("../sounds/wav/ut.wav");
 }
 
 int main() {
