@@ -375,3 +375,5 @@ _deps
 # Custom
 **/Debug/
 **/x64/
+Voidfall/Voidfall
+build/
