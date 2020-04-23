@@ -1,4 +1,7 @@
 bgfx/
 bimg/
 bx/
-Vf/.vs/Vf/v16/Browse.VC.opendb
+GLFW/
+GLEW/
+setup/
+Vf/.vs
