@@ -88,14 +88,25 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalIncludeDirectories>$(SolutionDir)\deps\bgfx\bx\include;$(SolutionDir)\deps\bgfx\bgfx\include;$(SolutionDir)\deps\bimg\bgfx\include;$(SolutionDir)\deps\GLFW\include;$(SolutionDir)\deps\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\OpenAL\include;$(SolutionDir)\..\bx\include;$(SolutionDir)\..\bx\include\compat\msvc;$(SolutionDir)\..\bgfx\include;$(SolutionDir)\..\bimg\include;$(SolutionDir)\..\GLFW\include;$(SolutionDir)\..\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Release;$(SolutionDir)\build\deps\bgfx\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+=======
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(SolutionDir)\..\OpenAL;$(SolutionDir)\..\GLEW\lib\release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies);bgfxDebug.lib;bgfxRelease.lib;bxDebug.lib;bxRelease.lib;bimgDebug.lib;bimgRelease.lib;OpenAL32.lib;bimg_decodeDebug.lib;bimg_decodeRelease.lib</AdditionalDependencies>
+      <ShowProgress>LinkVerbose</ShowProgress>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -104,14 +115,25 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalIncludeDirectories>$(SolutionDir)\deps\bgfx\bx\include;$(SolutionDir)\deps\bgfx\bgfx\include;$(SolutionDir)\deps\bimg\bgfx\include;$(SolutionDir)\deps\GLFW\include;$(SolutionDir)\deps\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\OpenAL\include;$(SolutionDir)\..\bx\include;$(SolutionDir)\..\bx\include\compat\msvc;$(SolutionDir)\..\bgfx\include;$(SolutionDir)\..\bimg\include;$(SolutionDir)\..\GLFW\include;$(SolutionDir)\..\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Release;$(SolutionDir)\build\deps\bgfx\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+=======
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(SolutionDir)\..\OpenAL;$(SolutionDir)\..\GLEW\lib\release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies);bgfxDebug.lib;bgfxRelease.lib;bxDebug.lib;bxRelease.lib;bimgDebug.lib;bimgRelease.lib;OpenAL32.lib;bimg_decodeDebug.lib;bimg_decodeRelease.lib</AdditionalDependencies>
+      <ShowProgress>LinkVerbose</ShowProgress>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -122,16 +144,27 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalIncludeDirectories>$(SolutionDir)\deps\bgfx\bx\include;$(SolutionDir)\deps\bgfx\bgfx\include;$(SolutionDir)\deps\bimg\bgfx\include;$(SolutionDir)\deps\GLFW\include;$(SolutionDir)\deps\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\OpenAL\include;$(SolutionDir)\..\bx\include;$(SolutionDir)\..\bx\include\compat\msvc;$(SolutionDir)\..\bgfx\include;$(SolutionDir)\..\bimg\include;$(SolutionDir)\..\GLFW\include;$(SolutionDir)\..\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Release;$(SolutionDir)\build\deps\bgfx\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+=======
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(SolutionDir)\..\OpenAL;$(SolutionDir)\..\GLEW\lib\release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies);bgfxDebug.lib;bgfxRelease.lib;bxDebug.lib;bxRelease.lib;bimgDebug.lib;bimgRelease.lib;OpenAL32.lib;bimg_decodeDebug.lib;bimg_decodeRelease.lib</AdditionalDependencies>
+      <ShowProgress>LinkVerbose</ShowProgress>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,20 +175,37 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalIncludeDirectories>$(SolutionDir)\deps\bgfx\bx\include;$(SolutionDir)\deps\bgfx\bgfx\include;$(SolutionDir)\deps\bimg\bgfx\include;$(SolutionDir)\deps\GLFW\include;$(SolutionDir)\deps\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+=======
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\OpenAL\include;$(SolutionDir)\..\bx\include;$(SolutionDir)\..\bx\include\compat\msvc;$(SolutionDir)\..\bgfx\include;$(SolutionDir)\..\bimg\include;$(SolutionDir)\..\GLFW\include;$(SolutionDir)\..\GLEW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+<<<<<<< HEAD:Voidfall/Voidfall.vcxproj
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Release;$(SolutionDir)\build\deps\bgfx\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;%(AdditionalDependencies)</AdditionalDependencies>
+=======
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(SolutionDir)\..\OpenAL;$(SolutionDir)\..\GLEW\lib\release\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies);bgfxDebug.lib;bgfxRelease.lib;bxDebug.lib;bxRelease.lib;bimgDebug.lib;bimgRelease.lib;OpenAL32.lib;bimg_decodeDebug.lib;bimg_decodeRelease.lib</AdditionalDependencies>
+      <ShowProgress>LinkVerbose</ShowProgress>
+>>>>>>> master:Vf/Vf/Vf.vcxproj
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="Game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

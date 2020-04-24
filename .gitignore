@@ -377,3 +377,5 @@ _deps
 **/x64/
 Voidfall/Voidfall
 build/
+**/.vs/
+
