@@ -9,7 +9,7 @@
 
 // GLEW
 //#define GLEW_STATIC
-#include <GL/glew.h>
+//#include <GL/glew.h>
 
 // GLFW
 #if BX_PLATFORM_LINUX
@@ -30,6 +30,7 @@ uint32_t reset = BGFX_RESET_VSYNC;
 int main(void)
 {
 	glfwInit();
+
 	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Hello, bgfx!", nullptr, nullptr);
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 	if (!window)
