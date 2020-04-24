@@ -1,10 +1,8 @@
 cd ../
 
-git clone git://github.com/bkaradzic/bx.git
-git clone git://github.com/bkaradzic/bimg.git
-git clone git://github.com/bkaradzic/bgfx.git
+git submodule update --init --recursive
 
-cd bgfx
+cd deps/bgfx/bgfx/
 
-..\bx\tools\bin\windows\genie vs2017
+..\bx\tools\bin\windows\genie --with-glfw vs2017
 start .build\projects\vs2017\bgfx.sln
