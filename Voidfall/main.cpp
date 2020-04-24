@@ -31,7 +31,7 @@ int main(void)
 {
 	glfwInit();
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Hello, bgfx!", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "no, bgfx!", nullptr, nullptr);
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 	if (!window)
 		return 1;
