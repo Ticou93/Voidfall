@@ -5,22 +5,30 @@ Game::~Game() {}
 
 void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t height, bool fullscreen){
 
-	if (glfwInit()) 
+	if (glfwInit())
 	{
 		std::cout << "GLFW Initialized Successfully." << std::endl;
 		window = glfwCreateWindow(width, height, title, NULL, NULL);
 	}
-	else 
+	else
 	{
 		return;
 	}
 
 	bgfx::PlatformData pd;
+
+    #if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
+	pd.ndt = glfwGetX11Display();
+	pd.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
+    #elif BX_PLATFORM_OSX
+	pd.nwh = glfwGetCocoaWindow(window);
+    #elif BX_PLATFORM_WINDOWS
 	pd.nwh = glfwGetWin32Window(window);
+    #endif
 	bgfx::setPlatformData(pd);
 	bgfx::renderFrame();
 
-	if (bgfx::init()) 
+	if (bgfx::init())
 	{
 		std::cout << "BGFX Initialized Successfully" << std::endl;
 		isRunning = true;
