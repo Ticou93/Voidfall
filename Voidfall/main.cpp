@@ -21,7 +21,7 @@ void gameThread() {
 
 void audioThread() {
 	audio = new Audio();
-	audio->playSound("../sounds/wav/ut.wav");
+	audio->playSound("../sounds/wav/Loonie - Biohazard.wav");
 }
 
 int main() {
