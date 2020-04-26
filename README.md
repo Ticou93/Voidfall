@@ -34,10 +34,11 @@ Things to make sure you have installed before you can build the project:
 * OpenAl Library: [https://www.openal.org/downloads/](https://www.openal.org/downloads/)
 
 #### Build Instructions
-1. Run the bat script in `Scrips/setup_x64.bat`. This should open up a Visual Studio solution for you. If not, navigate to the newly created build folder and run the solution located in the `Voidfall` folder.
-2. Build the Visual Studio solution in both Release and Debug. **NOTE:** Remember to build it for x64 if you use 64-bit system.
-3. Exit the Visual Studio solution.
-4. You should now be able to develop and build the project using the original VS solution located at `Voidfall/Voidfall.sln`
+1. Open CMD and assign set a path towards CMake if not yet done with (set PATH="C:\Program Files\CMake\bin";%PATH%)
+2. Go to root/setup and run setup_x64.bat through the same console. This should open up a Visual Studio solution for you. If not, navigate to the newly created build folder and run the solution located in the `Voidfall` folder.
+3. Build the Visual Studio solution in both Release and Debug. **NOTE:** Remember to build it for x64 if you use 64-bit system.
+4. Exit the Visual Studio solution.
+5. You should now be able to develop and build the project using the original VS solution located at `Voidfall/Voidfall.sln`
 
 ## External Links
 This project makes liberal use of the following projects:
