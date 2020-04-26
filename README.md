@@ -1,24 +1,47 @@
 # Voidfall
 Game Engine
 
+## Setup
 
+### Linux
 
-================= SETUP GUIDE ===================
- 
- [REMEMBER TO BUILD FOR x64 IN VISUAL STUDIOS]
- 
- 1. Run the bat file within the setup folder.
- 2. Build the bgfx solution that opens automatically (if it doesn't you can find it in Voidfall\bgfx\.build\projects\vs2017\bgfx.sln)
- 3. Done, you can now develop within the Vf solution!
- 
- 
-================= LINKS =========================
- 
-In case you want to try and build your own engine: 
-* BGFX: https://github.com/bkaradzic/bgfx
-* GLEW: http://glew.sourceforge.net/
-* GLFW: https://www.glfw.org/download.html
+#### Dependencies
+```
+git
+cmake
+libgl1-mesa-dev
+x11proto-core-dev
+libx11-dev
+```
 
-================= END ============================
- 
- 
+#### Build Instructions
+Do the following to build the project for Linux after cloning the repository:
+```
+$ mkdir build
+$ cd build
+$ cmake ..
+$ make -j8
+```
+
+The binary should be located at: `build/Voidfall/Voidfall`.
+
+### Windows
+
+#### Dependencies
+Things to make sure you have installed before you can build the project:
+* git: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+* CMake: [https://cmake.org/download/](https://cmake.org/download/)
+* OpenAl Library: [https://www.openal.org/downloads/](https://www.openal.org/downloads/)
+
+#### Build Instructions
+1. Run the bat script in `Scrips/setup_x64.bat`. This should open up a Visual Studio solution for you. If not, navigate to the newly created build folder and run the solution located in the `Voidfall` folder.
+2. Build the Visual Studio solution in both Release and Debug. **NOTE:** Remember to build it for x64 if you use 64-bit system.
+3. Exit the Visual Studio solution.
+4. You should now be able to develop and build the project using the original VS solution located at `Voidfall/Voidfall.sln`
+
+## External Links
+This project makes liberal use of the following projects:
+* bgfx - rendering engine: [https://github.com/bkaradzic/bgfx](https://github.com/bkaradzic/bgfx)
+* GLFW - OpenGL library: [https://www.glfw.org/](https://www.glfw.org/)
+* OpenAL - sound library: [https://www.openal.org/](https://www.openal.org/)
+	- The implementation used: [https://openal-soft.org](https://openal-soft.org)
