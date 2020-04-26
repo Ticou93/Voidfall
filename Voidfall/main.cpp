@@ -14,15 +14,16 @@ void gameThread() {
 		game->update();
 		game->render();
 	}
-
+	
 	game->clean();
-	return;
 }
+
 
 void audioThread() {
 	audio = new Audio();
 	audio->playSound("../sounds/wav/Loonie - Biohazard.wav");
 }
+
 
 int main() {
 

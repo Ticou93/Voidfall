@@ -8,7 +8,6 @@
 #include <fstream>
 #include <type_traits>
 #include <vector>
-#include <thread>
 
 #define alCall(function, ...) alCallImpl(__FILE__, __LINE__, function, __VA_ARGS__)
 #define alcCall(function, device, ...) alcCallImpl(__FILE__, __LINE__, function, device, __VA_ARGS__)
