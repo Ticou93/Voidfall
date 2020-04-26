@@ -95,7 +95,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Debug;$(SolutionDir)\build\deps\bgfx\Debug;$(SolutionDir)\build\deps\openal-soft\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfxd.lib;bxd.lib;bimgd.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerbose</ShowProgress>
     </Link>
   </ItemDefinitionGroup>
@@ -112,7 +112,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Debug;$(SolutionDir)\build\deps\bgfx\Debug;$(SolutionDir)\build\deps\openal-soft\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfxd.lib;bxd.lib;bimgd.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerbose</ShowProgress>
     </Link>
   </ItemDefinitionGroup>
