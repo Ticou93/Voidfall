@@ -36,6 +36,13 @@ Things to make sure you have installed before you can build the project:
 #### Build Instructions
 1. Open CMD and set a path towards CMake if not yet done with (set PATH="C:\Program Files\CMake\bin";%PATH%)
 2. Go to root/setup and run setup_x64.bat through the same console. This should open up a Visual Studio solution for you. If not, navigate to the newly created build folder and run the solution located in the `Voidfall` folder.
+
+```
+$ set PATH="PATH_TO_CMAKE_BIN";%PATH%
+$ cd setup
+$ setup_x64.bat
+
+```
 3. Build the Visual Studio solution in both Release and Debug. **NOTE:** Remember to build it for x64 if you use 64-bit system.
 4. Exit the Visual Studio solution.
 5. You should now be able to develop and build the project using the original VS solution located at `Voidfall/Voidfall.sln`
