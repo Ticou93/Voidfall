@@ -9,21 +9,34 @@ extern TaskSystem Tasker;
 
 TaskSystem Tasker;//Create a task system, do not use from other threads
 
+
+//!!!!!!!!VOIDEXECUTE TEMPLATE
+//class VoidGame {
+//public:
+//	bool Init() {}
+//	bool Update() {}
+//	void Deinit() {}
+//protected:
+//};
+//!!!!!!!!Template
+
+
+template <class VoidExecute>
 class VoidEngine {
 public:
 	VoidEngine() : m_framecount(0){}
+	
+	//Init systems
+	bool Init() {
+		Tasker.Init();//Set up the task system properly
+	}
+
+	//Deinit systems
+	void Deinit() {
+		Tasker.Deinit();
+	}
 
 	void Engage() {
-		Init();
-
-		//TESTING!!!!!!!
-		//Add scene
-		//Add world(includes grid)
-		//Add ground -> static game entity
-		//Add camera -> noninterfering game entity
-		//Add gravity -> affector game entity
-		//Add humanunit -> interfering game entity
-		
 		USRArray<Position>* parr = new USRArray<Position>();
 		USRArray<Velocity>* varr = new USRArray<Velocity>();
 		
@@ -34,48 +47,58 @@ public:
 
 		std::chrono::duration<float> dt;
 		int i = 0;
+		//!!!!INIT PROGRAM
+		m_program.Init();
+		//!!!!!!!!!!!!!!!!
 		while(true){
 			auto start = std::chrono::steady_clock::now();
-			//entitysys.Update();
 
-			
-			if(i<5000000) Tasker.Execute([=]() {
-				m_physics.Update(*parr, *varr, parr->Count(), dt.count());
-				});
-			
-			if (i == 5000000) {
-				std::this_thread::sleep_for(5s);
-				while (!Tasker.IsAllDone());
-			}
-			if (i > 5000000) Tasker.Execute([=]() {
-				m_physics.Update(*parr, *varr, parr->Count(), dt.count());
-				});
-			if (i > 10000000) {
-				while (!Tasker.IsAllDone());
-				break;
-			}
-			++i;
+			if (!m_program.Update()) break;
+
+
+
 			auto end = std::chrono::steady_clock::now();
 			//std::chrono::nanoseconds dt = (end - start);
 			dt = (end - start);
+
 			//cout << std::chrono::duration_cast<std::chrono::nanoseconds>(dt).count() << endl;
 			//std::this_thread::sleep_for(500ms);
 		}
 
-		Deinit();
+		//!!!!DEINIT PROGRAM
+		m_program.Deinit();
+		//!!!!!!!!!!!!!!!!!!
 	}
+	
 protected:
-	void Init() {
-		Tasker.Init();//Set up the task system properly
-	}
-	void Deinit() {
-		Tasker.Deinit();
-	}
-
 	PhysicsSystem m_physics;
 	//EntitySystem entitysys;
 	uint64_t m_framecount;
+	VoidExecute m_program;//The engine program
 };
+
+////Define VOIDEXECUTE with your execution class name
+//#ifdef VOIDEXECUTE
+//int main() {
+//	VoidEngine<VOIDEXECUTE> voidengine;
+//	if(!voidengine.Init()) return 1;
+//	voidengine.Engage();
+//	voidengine.Deinit();
+//	return 0;
+//}
+//#endif
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Staggered update, possible?
 ////Logic update, paths, sets incentives and applies forces
