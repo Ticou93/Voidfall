@@ -4,16 +4,14 @@ Game::Game() {}
 Game::~Game() {}
 
 
-struct PosColorVertex
-{
+struct PosColorVertex{
 	float x;
 	float y;
 	float z;
 	uint32_t abgr;
 };
 
-static PosColorVertex cubeVertices[] =
-{
+static PosColorVertex cubeVertices[] ={
 	{-1.0f,  1.0f,  1.0f, 0xff000000 },
 	{ 1.0f,  1.0f,  1.0f, 0xff0000ff },
 	{-1.0f, -1.0f,  1.0f, 0xff00ff00 },
@@ -24,8 +22,7 @@ static PosColorVertex cubeVertices[] =
 	{ 1.0f, -1.0f, -1.0f, 0xffffffff },
 };
 
-static const uint16_t cubeTriList[] =
-{
+static const uint16_t cubeTriList[] ={
 	0, 1, 2,
 	1, 3, 2,
 	4, 6, 5,
@@ -40,54 +37,15 @@ static const uint16_t cubeTriList[] =
 	6, 3, 7,
 };
 
-// Handles shaders
-bgfx::ShaderHandle loadShader(const char* FILENAME)
-{
-	const char* shaderPath = "???";
 
-	switch (bgfx::getRendererType()) {
-	case bgfx::RendererType::Noop:
-	case bgfx::RendererType::Direct3D9:  shaderPath = "shaders/dx9/";   break;
-	case bgfx::RendererType::Direct3D11:
-	case bgfx::RendererType::Direct3D12: shaderPath = "shaders/dx11/";  break;
-	case bgfx::RendererType::Gnm:        shaderPath = "shaders/pssl/";  break;
-	case bgfx::RendererType::Metal:      shaderPath = "shaders/metal/"; break;
-	case bgfx::RendererType::OpenGL:     shaderPath = "shaders/glsl/";  break;
-	case bgfx::RendererType::OpenGLES:   shaderPath = "shaders/essl/";  break;
-	case bgfx::RendererType::Vulkan:     shaderPath = "shaders/spirv/"; break;
-	}
-
-	size_t shaderLen = strlen(shaderPath);
-	size_t fileLen = strlen(FILENAME);
-	char* filePath = (char*)calloc(1, shaderLen + fileLen + 1);
-	memcpy(filePath, shaderPath, shaderLen);
-	memcpy(&filePath[shaderLen], FILENAME, fileLen);
-
-	FILE* file = fopen(filePath, "rb");
-	fseek(file, 0, SEEK_END);
-	long fileSize = ftell(file);
-	fseek(file, 0, SEEK_SET);
-
-	const bgfx::Memory* mem = bgfx::alloc(fileSize + 1);
-	fread(mem->data, 1, fileSize, file);
-	mem->data[mem->size - 1] = '\0';
-	fclose(file);
-
-	return bgfx::createShader(mem);
-}
 
 void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t height, bool fullscreen){
 
-	if (glfwInit()) 
-	{
-		std::cout << "GLFW Initialized Successfully." << std::endl;
-		window = glfwCreateWindow(width, height, title, NULL, NULL);
-	}
-	else 
-	{
-		return;
-	}
-
+	if (!glfwInit()) return;
+	
+	std::cout << "GLFW Initialized Successfully." << std::endl;
+	window = glfwCreateWindow(width, height, title, nullptr, nullptr);
+	
 	bgfx::PlatformData pd;
 
 
@@ -102,12 +60,12 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	bgfx::setPlatformData(pd);
 	bgfx::renderFrame();
 
-	if (bgfx::init()) 
-	{
+
+
+	if (bgfx::init()){
 		std::cout << "BGFX Initialized Successfully" << std::endl;
 		isRunning = true;
-	}
-	else {
+	}else{
 		isRunning = false;
 		return;
 	}
@@ -118,9 +76,8 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	// Set view rectangle for 0th view
 	bgfx::setViewRect(0, 0, 0, uint16_t(width), uint16_t(height));
 	// Clear the view rect
-	bgfx::setViewClear(0,
-		BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,
-		0x443355FF, 1.0f, 0);
+	bgfx::setViewClear(0,BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,0x443355FF, 1.0f, 0);
+
 
 	bgfx::VertexLayout vl;
 	vl.begin()
@@ -133,23 +90,16 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	vsh = loadShader("vs_cubes.bin");
 	fsh = loadShader("fs_cubes.bin");
 	program = bgfx::createProgram(vsh, fsh, true);
-	
-	
 }
 
-void Game::handleEvents()
-{
+void Game::handleEvents(){
 	glfwPollEvents();
 	if (glfwGetKey(window, GLFW_KEY_F1) == GLFW_PRESS) {
-		bgfx::setViewClear(0,
-			BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,
-			0x344661FF, 1.0f, 0);
+		bgfx::setViewClear(0,BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,0x344661FF, 1.0f, 0);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_F2) == GLFW_PRESS) {
-		bgfx::setViewClear(0,
-			BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,
-			0x614234FF, 1.0f, 0);
+		bgfx::setViewClear(0,BGFX_CLEAR_COLOR | BGFX_CLEAR_DEPTH,0x614234FF, 1.0f, 0);
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
