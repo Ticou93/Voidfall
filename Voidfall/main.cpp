@@ -3,8 +3,6 @@
 #include <thread>
 #include "VoidEngine.h"
 
-#define VOIDEXECUTE VoidGame
-
 class VoidGame {
 public:
 	bool Init(){

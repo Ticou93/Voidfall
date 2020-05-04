@@ -74,7 +74,8 @@ protected:
 	PhysicsSystem m_physics;
 	//EntitySystem entitysys;
 	uint64_t m_framecount;
-	VoidExecute m_program;//The engine program
+	VoidExecute m_program;//The executing program
+
 };
 
 ////Define VOIDEXECUTE with your execution class name
