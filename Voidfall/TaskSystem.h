@@ -6,7 +6,7 @@
 #include <functional>
 #include <algorithm>
 #include <condition_variable>
-#include "debug.h"
+//#include "debug.h"
 
 
 //Find out our count for system cores(including virtual ones) and suggested number of threads
