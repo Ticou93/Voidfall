@@ -56,6 +56,7 @@ bgfx::ShaderHandle loadShader(const char* FILENAME)
 	case bgfx::RendererType::OpenGLES:   shaderPath = "shaders/essl/";  break;
 	case bgfx::RendererType::Vulkan:     shaderPath = "shaders/spirv/"; break;
 	}
+    std::cout << "Load shader at: " << shaderPath << std::endl;
 
 	size_t shaderLen = strlen(shaderPath);
 	size_t fileLen = strlen(FILENAME);
@@ -78,18 +79,17 @@ bgfx::ShaderHandle loadShader(const char* FILENAME)
 
 void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t height, bool fullscreen){
 
-	if (glfwInit()) 
+	if (glfwInit())
 	{
 		std::cout << "GLFW Initialized Successfully." << std::endl;
 		window = glfwCreateWindow(width, height, title, NULL, NULL);
 	}
-	else 
+	else
 	{
 		return;
 	}
 
 	bgfx::PlatformData pd;
-
 
 	#if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
 	pd.ndt = glfwGetX11Display();
@@ -102,7 +102,7 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	bgfx::setPlatformData(pd);
 	bgfx::renderFrame();
 
-	if (bgfx::init()) 
+	if (bgfx::init())
 	{
 		std::cout << "BGFX Initialized Successfully" << std::endl;
 		isRunning = true;
@@ -114,7 +114,7 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 
 	bgfx::reset(width, height, BGFX_RESET_VSYNC);
 	// Enable debug text.
-	//bgfx::setDebug(BGFX_DEBUG_STATS /*| BGFX_DEBUG_STATS*/);
+	bgfx::setDebug(BGFX_DEBUG_STATS /*| BGFX_DEBUG_STATS*/);
 	// Set view rectangle for 0th view
 	bgfx::setViewRect(0, 0, 0, uint16_t(width), uint16_t(height));
 	// Clear the view rect
@@ -133,8 +133,6 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	vsh = loadShader("vs_cubes.bin");
 	fsh = loadShader("fs_cubes.bin");
 	program = bgfx::createProgram(vsh, fsh, true);
-	
-	
 }
 
 void Game::handleEvents()
@@ -155,7 +153,7 @@ void Game::handleEvents()
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
 		isRunning = false;
 	}
-	
+
 	if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 		m_yPos -= 0.1;
 	}

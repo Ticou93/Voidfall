@@ -4,13 +4,14 @@
 
 #define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
-#include <iostream> 
+#include <iostream>
 #include <fstream>
+#include <cstring>
 
 // BGFX
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
-#include <bgfx/bgfx_utils.h>
+//#include <bgfx/bgfx_utils.h>
 
 
 
@@ -19,15 +20,15 @@
 #include <bx/allocator.h>
 #include <bx/debug.h>
 
-// GLEW 
+// GLEW
 /*
 #define GLEW_STATIC
-#include <GL/glew.h> 
+#include <GL/glew.h>
 */
 //#include "audio.h"
 
-// GLFW 
-#include <GLFW/glfw3.h> 
+// GLFW
+#include <GLFW/glfw3.h>
 #if BX_PLATFORM_LINUX
 #define GLFW_EXPOSE_NATIVE_X11
 #elif BX_PLATFORM_WINDOWS
@@ -64,8 +65,6 @@ protected:
 	int counter = 0;
 	float m_xPos = 0.0f;
 	float m_yPos = 0.0f;
-	
-
 };
 
 #endif /* Game_h */
