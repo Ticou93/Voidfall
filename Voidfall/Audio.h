@@ -48,8 +48,7 @@ public:
         const std::uint_fast32_t line,
         alFunction function,
         Params... params)
-        ->typename std::enable_if_t<!std::is_same_v<void, decltype(function(params...))>, decltype(function(params...))>
-    {
+        ->typename std::enable_if_t<!std::is_same_v<void, decltype(function(params...))>, decltype(function(params...))>{
         auto ret = function(std::forward<Params>(params)...);
         check_al_errors(filename, line);
         return ret;
@@ -60,12 +59,10 @@ public:
         const std::uint_fast32_t line,
         alFunction function,
         Params... params)
-        ->typename std::enable_if_t<std::is_same_v<void, decltype(function(params...))>, bool>
-    {
+        ->typename std::enable_if_t<std::is_same_v<void, decltype(function(params...))>, bool>{
         function(std::forward<Params>(params)...);
         return check_al_errors(filename, line);
     }
-
 
     template<typename alcFunction, typename... Params>
     auto alcCallImpl(const char* filename,
@@ -73,8 +70,7 @@ public:
         alcFunction function,
         ALCdevice* device,
         Params... params)
-        ->typename std::enable_if_t<std::is_same_v<void, decltype(function(params...))>, bool>
-    {
+        ->typename std::enable_if_t<std::is_same_v<void, decltype(function(params...))>, bool>{
         function(std::forward<Params>(params)...);
         return check_alc_errors(filename, line, device);
     }
@@ -86,8 +82,7 @@ public:
         ReturnType& returnValue,
         ALCdevice* device,
         Params... params)
-        ->typename std::enable_if_t<!std::is_same_v<void, decltype(function(params...))>, bool>
-    {
+        ->typename std::enable_if_t<!std::is_same_v<void, decltype(function(params...))>, bool>{
         returnValue = function(std::forward<Params>(params)...);
         return check_alc_errors(filename, line, device);
     }
