@@ -1,0 +1,18 @@
+[submodule "deps/bgfx/bgfx"]
+	path = deps/bgfx/bgfx
+	url = https://github.com/bkaradzic/bgfx.git
+[submodule "deps/bgfx/bx"]
+	path = deps/bgfx/bx
+	url = https://github.com/bkaradzic/bx.git
+[submodule "deps/bgfx/bimg"]
+	path = deps/bgfx/bimg
+	url = https://github.com/bkaradzic/bimg.git
+[submodule "deps/glfw"]
+	path = deps/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "deps/glew"]
+	path = deps/glew
+	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "deps/openal-soft"]
+	path = deps/openal-soft
+	url = https://github.com/kcat/openal-soft.git

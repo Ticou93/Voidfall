@@ -103,15 +103,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include;$(SolutionDir)\deps\openal-soft\include;$(SolutionDir)\deps\bgfx\bx\include;$(SolutionDir)\deps\bgfx\bx\include\compat\msvc;$(SolutionDir)\deps\bgfx\bgfx\include;$(SolutionDir)\deps\bgfx\bimg\include;$(SolutionDir)\deps\GLFW\include;$(SolutionDir)\deps\GLEW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)deps\openal-soft\include;$(SolutionDir)deps\bgfx\bx\include;$(SolutionDir)deps\bgfx\bx\include\compat\msvc;$(SolutionDir)deps\bgfx\bgfx\examples\common;$(SolutionDir)deps\bgfx\bgfx\include;$(SolutionDir)deps\bgfx\bimg\include;$(SolutionDir)deps\glfw\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Debug;$(SolutionDir)\build\deps\bgfx\Debug;$(SolutionDir)\build\deps\openal-soft\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\build\glfw\src\Debug;$(SolutionDir)\build\bgfx\Debug;$(SolutionDir)build\openal-soft\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerbose</ShowProgress>
     </Link>
@@ -160,12 +161,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
-    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio.h" />
-    <ClInclude Include="Game.h" />
+    <ClInclude Include="ECS\Components\Colour.h" />
+    <ClInclude Include="ECS\Components\Renderable.h" />
+    <ClInclude Include="ECS\Core\ComponentArray.h" />
+    <ClInclude Include="ECS\Core\ComponentManager.h" />
+    <ClInclude Include="ECS\Core\Coordinator.h" />
+    <ClInclude Include="ECS\Core\EntityManager.h" />
+    <ClInclude Include="ECS\Core\System.h" />
+    <ClInclude Include="ECS\Core\SystemManager.h" />
+    <ClInclude Include="ECS\Core\Types.h" />
+    <ClInclude Include="ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="tools\shaderHandler.h" />
+    <ClInclude Include="WindowManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
