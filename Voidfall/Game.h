@@ -38,7 +38,8 @@
 #include "GLFW/glfw3native.h"
 
 
-class Game{
+class Game
+{
 
 public:
 	Game();
