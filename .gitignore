@@ -378,4 +378,5 @@ _deps
 Voidfall/Voidfall
 build/
 **/.vs/
+**/*vcxproj.user
 
