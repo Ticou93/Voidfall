@@ -89,7 +89,7 @@ void RenderSystem::Init() {
 
 }
 
-void RenderSystem::Update(float dt) {	
+void RenderSystem::Update(float dt) {
 	const bx::Vec3 at = { 0.0f, 0.0f,  0.0f };
 	const bx::Vec3 eye = { 0.0f, 0.0f, -5.0f };
 	float view[16];

@@ -31,11 +31,8 @@ class RenderSystem : public System
 {
 public:
 	void Init();
-
 	void Update(float dt);
-
 private:
-
 	Entity mCube;
 	bgfx::ProgramHandle program, program1;
 	bgfx::VertexBufferHandle vbh, vbh1;

@@ -1,9 +1,4 @@
 #include "WindowManager.h"
-#include "ECS/Core/Coordinator.h"
-#include "ECS/Components/Colour.h"
-#include "ECS/Systems/RenderSystem.h"
-#include <random>
-
 
 extern Coordinator gCoord;
 
@@ -26,21 +21,18 @@ void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
 	debug = BGFX_DEBUG_NONE;
 	reset = BGFX_RESET_VSYNC;
 
-	
-
 #if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
-	pd.ndt = glfwGetX11Display();
-	pd.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
+    pd.ndt = glfwGetX11Display();
+    pd.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
 #elif BX_PLATFORM_WINDOWS
 	pd.nwh = glfwGetWin32Window(window);
 #elif BX_PLATFORM_OSX
 	pd.nwh = glfwGetCocoaWindow(window);
-#endif	
-	
+#endif
+
 
 	// Set data on which platform it is that runs bgfx.
 	bgfx::setPlatformData(pd);
-	bgfx::renderFrame();
 
 	// Initialize bgfx
 	bgfx::Init init;
@@ -68,7 +60,9 @@ void WindowManager::handleEvents()
 	}
 }
 
-void WindowManager::update() {}
+void WindowManager::update() {
+	bgfx::renderFrame();
+}
 
 void WindowManager::clean() {
 	bgfx::shutdown();

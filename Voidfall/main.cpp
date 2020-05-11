@@ -8,9 +8,7 @@ WindowManager* wm = nullptr;
 Audio* audio = nullptr;
 Coordinator gCoord;
 
-
 void videoThread() {
-
 	// Initialize the ECS system coordinator
 	gCoord.Init();
 
@@ -18,16 +16,16 @@ void videoThread() {
 	gCoord.RegisterComponent<Renderable>();
 
 	wm = new WindowManager();
-	wm->Init("Voidfall Alpha", 1200, 720);
+	wm->Init("Voidfall Alpha", 1280, 720);
 
 	// Assign system to component
 	auto renderSystem = gCoord.RegisterSystem<RenderSystem>();
 	{
-	
+
 		Signature signature;
 		signature.set(gCoord.GetComponentType<Renderable>());
 	}
-	
+
 	// Call system that runs the ECS functions
 	renderSystem->Init();
 
@@ -35,6 +33,7 @@ void videoThread() {
 	float dt = 0.0f;
 
 	while (wm->running()) {
+        wm->update();
 		wm->handleEvents();
 		renderSystem->Update(dt);
 		dt += 0.05f;
@@ -49,11 +48,9 @@ void audioThread() {
 }
 
 int main() {
-
 	std::thread t1(videoThread);
 	std::thread t2(audioThread);
 
 	t1.join();
 	t2.join();
-
 }

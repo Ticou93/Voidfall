@@ -8,31 +8,36 @@
 // Default c++ headers
 #include <stdio.h>
 #include <iostream>
+#include <random>
 
 // BGFX
-#include "bgfx/platform.h"
+#include <bgfx/bgfx.h>
+#include <bgfx/platform.h>
 //#include "common.h"
 
 // BIMG
-#include "bimg/decode.h"
+#include <bimg/decode.h>
 
 // BX
-#include "bx/math.h"
+#include <bx/bx.h>
+#include <bx/math.h>
 #include <bx/uint32_t.h>
 
 // GLFW
 #include <GLFW/glfw3.h>
-#if BX_PLATFORM_LINUX
+#if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
 #define GLFW_EXPOSE_NATIVE_X11
 #elif BX_PLATFORM_WINDOWS
 #define GLFW_EXPOSE_NATIVE_WIN32
 #elif BX_PLATFORM_OSX
 #define GLFW_EXPOSE_NATIVE_COCOA
 #endif
-#include "GLFW/glfw3native.h"
+#include <GLFW/glfw3native.h>
 
 // Other
-
+#include "ECS/Core/Coordinator.h"
+#include "ECS/Components/Colour.h"
+#include "ECS/Systems/RenderSystem.h"
 //#include "bgfx/bgfx_utils.h"
 
 
