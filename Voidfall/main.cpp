@@ -1,60 +1,59 @@
-#include "Game.h"
+#include "WindowManager.h"
 #include "Audio.h"
-#include <thread>
-#include "VoidEngine.h"
+#include "ECS/Core/Coordinator.h"
+#include "ECS/Components/Renderable.h"
+#include "ECS/Systems/RenderSystem.h"
 
-class VoidGame {
-public:
-	bool Init(){
-		//Register state
+WindowManager* wm = nullptr;
+Audio* audio = nullptr;
+Coordinator gCoord;
 
+
+void videoThread() {
+
+	// Initialize the ECS system coordinator
+	gCoord.Init();
+
+	// Register new component
+	gCoord.RegisterComponent<Renderable>();
+
+	wm = new WindowManager();
+	wm->Init("Voidfall Alpha", 1200, 720);
+
+	// Assign system to component
+	auto renderSystem = gCoord.RegisterSystem<RenderSystem>();
+	{
+	
+		Signature signature;
+		signature.set(gCoord.GetComponentType<Renderable>());
 	}
-	bool Update() {
+	
+	// Call system that runs the ECS functions
+	renderSystem->Init();
 
+	// delta time used to rotate cube
+	float dt = 0.0f;
 
-		return true;
+	while (wm->running()) {
+		wm->handleEvents();
+		renderSystem->Update(dt);
+		dt += 0.05f;
 	}
-	void Deinit() {}
-protected:
-	//State stack to move between scenes
-};
 
-
-//
-//Game* game = nullptr;
-//Audio* audio = nullptr;
-//
-//void gameThread() {
-//	game = new Game();
-//	game->init("Voidfall Alpha", 0, 0, 1200, 720, false);
-//	while (game->running()) {
-//
-//		game->handleEvents();
-//		game->update();
-//		game->render();
-//	}
-//	game->clean();
-//}
-//
-//
-//void audioThread() {
-//	audio = new Audio();
-//	audio->playSound("../sounds/wav/Loonie - Biohazard.wav");
-//}
-//
-//
-
-int main() {
-	VoidEngine<VoidGame> ve;
-	if(!ve.Init()) return 1;
-	ve.Engage();
-	ve.Deinit();
-
-	return 0;
+	wm->clean();
+	return;
 }
 
-//std::thread t1(gameThread);
-//std::thread t2(audioThread);
+void audioThread() {
+	audio = new Audio();
+}
 
-//t1.join();
-//t2.join();
+int main() {
+
+	std::thread t1(videoThread);
+	std::thread t2(audioThread);
+
+	t1.join();
+	t2.join();
+
+}

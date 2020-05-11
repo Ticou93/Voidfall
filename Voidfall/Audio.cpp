@@ -3,11 +3,14 @@
 Audio::Audio() {}
 Audio::~Audio() {}
 
-bool Audio::check_al_errors(const std::string& filename, const std::uint_fast32_t line){
+bool Audio::check_al_errors(const std::string& filename, const std::uint_fast32_t line)
+{
 	ALenum error = alGetError();
-	if (error != AL_NO_ERROR){
+	if (error != AL_NO_ERROR)
+	{
 		std::cerr << "***ERROR*** (" << filename << ": " << line << ")\n";
-		switch (error){
+		switch (error)
+		{
 		case AL_INVALID_NAME:
 			std::cerr << "AL_INVALID_NAME: a bad name (ID) was passed to an OpenAL function";
 			break;
@@ -32,11 +35,14 @@ bool Audio::check_al_errors(const std::string& filename, const std::uint_fast32_
 	return true;
 }
 
-bool Audio::check_alc_errors(const std::string& filename, const std::uint_fast32_t line, ALCdevice* device){
+bool Audio::check_alc_errors(const std::string& filename, const std::uint_fast32_t line, ALCdevice* device)
+{
 	ALCenum error = alcGetError(device);
-	if (error != ALC_NO_ERROR){
+	if (error != ALC_NO_ERROR)
+	{
 		std::cerr << "***ERROR*** (" << filename << ": " << line << ")\n";
-		switch (error){
+		switch (error)
+		{
 		case ALC_INVALID_VALUE:
 			std::cerr << "ALC_INVALID_VALUE: an invalid value was passed to an OpenAL function";
 			break;
@@ -75,113 +81,134 @@ bool Audio::load_wav_file_header(std::ifstream& file,
 	std::uint8_t& channels,
 	std::int32_t& sampleRate,
 	std::uint8_t& bitsPerSample,
-	ALsizei& size){
+	ALsizei& size)
+{
 	char buffer[4];
-	if (!file.is_open())return false;
+	if (!file.is_open())
+		return false;
 
 	// the RIFF
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read RIFF" << std::endl;
 		return false;
 	}
-	if (std::strncmp(buffer, "RIFF", 4) != 0){
+	if (std::strncmp(buffer, "RIFF", 4) != 0)
+	{
 		std::cerr << "ERROR: file is not a valid WAVE file (header doesn't begin with RIFF)" << std::endl;
 		return false;
 	}
 
 	// the size of the file
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read size of file" << std::endl;
 		return false;
 	}
 
 	// the WAVE
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read WAVE" << std::endl;
 		return false;
 	}
-	if (std::strncmp(buffer, "WAVE", 4) != 0){
+	if (std::strncmp(buffer, "WAVE", 4) != 0)
+	{
 		std::cerr << "ERROR: file is not a valid WAVE file (header doesn't contain WAVE)" << std::endl;
 		return false;
 	}
 
 	// "fmt/0"
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read fmt/0" << std::endl;
 		return false;
 	}
 
 	// this is always 16, the size of the fmt data chunk
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read the 16" << std::endl;
 		return false;
 	}
 
 	// PCM should be 1?
-	if (!file.read(buffer, 2)){
+	if (!file.read(buffer, 2))
+	{
 		std::cerr << "ERROR: could not read PCM" << std::endl;
 		return false;
 	}
 
 	// the number of channels
-	if (!file.read(buffer, 2)){
+	if (!file.read(buffer, 2))
+	{
 		std::cerr << "ERROR: could not read number of channels" << std::endl;
 		return false;
 	}
 	channels = convert_to_int(buffer, 2);
 
 	// sample rate
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read sample rate" << std::endl;
 		return false;
 	}
 	sampleRate = convert_to_int(buffer, 4);
 
 	// (sampleRate * bitsPerSample * channels) / 8
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read (sampleRate * bitsPerSample * channels) / 8" << std::endl;
 		return false;
 	}
 
 	// ?? dafaq
-	if (!file.read(buffer, 2)){
+	if (!file.read(buffer, 2))
+	{
 		std::cerr << "ERROR: could not read dafaq" << std::endl;
 		return false;
 	}
 
 	// bitsPerSample
-	if (!file.read(buffer, 2)){
+	if (!file.read(buffer, 2))
+	{
 		std::cerr << "ERROR: could not read bits per sample" << std::endl;
 		return false;
 	}
 	bitsPerSample = convert_to_int(buffer, 2);
 
 	// data chunk header "data"
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read data chunk header" << std::endl;
 		return false;
 	}
-	if (std::strncmp(buffer, "data", 4) != 0){
+	if (std::strncmp(buffer, "data", 4) != 0)
+	{
 		std::cerr << "ERROR: file is not a valid WAVE file (doesn't have 'data' tag)" << std::endl;
 		return false;
 	}
 
 	// size of data
-	if (!file.read(buffer, 4)){
+	if (!file.read(buffer, 4))
+	{
 		std::cerr << "ERROR: could not read data size" << std::endl;
 		return false;
 	}
 	size = convert_to_int(buffer, 4);
 
 	/* cannot be at the end of file */
-	if (file.eof()){
+	if (file.eof())
+	{
 		std::cerr << "ERROR: reached EOF on the file" << std::endl;
 		return false;
 	}
-	if (file.fail()){
+	if (file.fail())
+	{
 		std::cerr << "ERROR: fail state set on the file" << std::endl;
 		return false;
 	}
+
 	return true;
 }
 
@@ -189,19 +216,24 @@ char* Audio::load_wav(const std::string& filename,
 	std::uint8_t& channels,
 	std::int32_t& sampleRate,
 	std::uint8_t& bitsPerSample,
-	ALsizei& size){
+	ALsizei& size)
+{
 	std::ifstream in(filename, std::ios::binary);
-	if (!in.is_open()){
+	if (!in.is_open())
+	{
 		std::cerr << "ERROR: Could not open \"" << filename << "\"" << std::endl;
 		return nullptr;
 	}
-	if (!load_wav_file_header(in, channels, sampleRate, bitsPerSample, size)){
+	if (!load_wav_file_header(in, channels, sampleRate, bitsPerSample, size))
+	{
 		std::cerr << "ERROR: Could not load wav header of \"" << filename << "\"" << std::endl;
 		return nullptr;
 	}
 
 	char* data = new char[size];
+
 	in.read(data, size);
+
 	return data;
 }
 
@@ -212,13 +244,16 @@ void Audio::update_stream(const ALuint source,
 	const ALenum& format,
 	const std::int32_t& sampleRate,
 	const std::vector<char>& soundData,
-	std::size_t& cursor){
+	std::size_t& cursor)
+{
 	ALint buffersProcessed = 0;
 	alCall(alGetSourcei, source, AL_BUFFERS_PROCESSED, &buffersProcessed);
 
-	if (buffersProcessed <= 0) return;
+	if (buffersProcessed <= 0)
+		return;
 
-	while (buffersProcessed--){
+	while (buffersProcessed--)
+	{
 		ALuint buffer;
 		alCall(alSourceUnqueueBuffers, source, 1, &buffer);
 
@@ -234,7 +269,8 @@ void Audio::update_stream(const ALuint source,
 		std::memcpy(&data[0], &soundData[cursor], dataSizeToCopy);
 		cursor += dataSizeToCopy;
 
-		if (dataSizeToCopy < BUFFER_SIZE){
+		if (dataSizeToCopy < BUFFER_SIZE)
+		{
 			cursor = 0;
 			std::memcpy(&data[dataSizeToCopy], &soundData[cursor], BUFFER_SIZE - dataSizeToCopy);
 			cursor = BUFFER_SIZE - dataSizeToCopy;
@@ -247,17 +283,22 @@ void Audio::update_stream(const ALuint source,
 	}
 }
 
-int Audio::playSound(std::string soundToPlay){
+int Audio::playSound(std::string soundToPlay)
+{
 	ALCdevice* openALDevice = alcOpenDevice(nullptr);
-	if (!openALDevice) return 0;
+	if (!openALDevice)
+		return 0;
 
 	ALCcontext* openALContext;
-	if (!alcCall(alcCreateContext, openALContext, openALDevice, openALDevice, nullptr) || !openALContext){
+	if (!alcCall(alcCreateContext, openALContext, openALDevice, openALDevice, nullptr) || !openALContext)
+	{
 		std::cerr << "ERROR: Could not create audio context" << std::endl;
 		return 0;
 	}
 	ALCboolean contextMadeCurrent = false;
-	if (!alcCall(alcMakeContextCurrent, contextMadeCurrent, openALDevice, openALContext) || contextMadeCurrent != ALC_TRUE){
+	if (!alcCall(alcMakeContextCurrent, contextMadeCurrent, openALDevice, openALContext)
+		|| contextMadeCurrent != ALC_TRUE)
+	{
 		std::cerr << "ERROR: Could not make audio context current" << std::endl;
 		return 0;
 	}
@@ -267,7 +308,8 @@ int Audio::playSound(std::string soundToPlay){
 	std::uint8_t bitsPerSample;
 	ALsizei dataSize;
 	char* rawSoundData = load_wav(soundToPlay, channels, sampleRate, bitsPerSample, dataSize);
-	if (rawSoundData == nullptr || dataSize == 0){
+	if (rawSoundData == nullptr || dataSize == 0)
+	{
 		std::cerr << "ERROR: Could not load wav" << std::endl;
 		return 0;
 	}
@@ -277,7 +319,7 @@ int Audio::playSound(std::string soundToPlay){
 
 	alCall(alGenBuffers, NUM_BUFFERS, &buffers[0]);
 
-	ALenum format;// = GetWavFormat(channels, bitsPerSample);
+	ALenum format;
 
 	if (channels == 1 && bitsPerSample == 8)
 		format = AL_FORMAT_MONO8;
@@ -287,7 +329,8 @@ int Audio::playSound(std::string soundToPlay){
 		format = AL_FORMAT_STEREO8;
 	else if (channels == 2 && bitsPerSample == 16)
 		format = AL_FORMAT_STEREO16;
-	else{
+	else
+	{
 		std::cerr
 			<< "ERROR: unrecognised wave format: "
 			<< channels << " channels, "
@@ -295,7 +338,8 @@ int Audio::playSound(std::string soundToPlay){
 		return 0;
 	}
 
-	for (std::size_t i = 0; i < NUM_BUFFERS; ++i){
+	for (std::size_t i = 0; i < NUM_BUFFERS; ++i)
+	{
 		alCall(alBufferData, buffers[i], format, &soundData[i * BUFFER_SIZE], BUFFER_SIZE, sampleRate);
 	}
 
@@ -306,14 +350,17 @@ int Audio::playSound(std::string soundToPlay){
 	alCall(alSource3f, source, AL_POSITION, 0, 0, 0);
 	alCall(alSource3f, source, AL_VELOCITY, 0, 0, 0);
 	alCall(alSourcei, source, AL_LOOPING, AL_FALSE);
+
 	alCall(alSourceQueueBuffers, source, NUM_BUFFERS, &buffers[0]);
+
 	alCall(alSourcePlay, source);
 
 	ALint state = AL_PLAYING;
 
 	std::size_t cursor = BUFFER_SIZE * NUM_BUFFERS;
 
-	while (state == AL_PLAYING){
+	while (state == AL_PLAYING)
+	{
 		update_stream(source, format, sampleRate, soundData, cursor);
 		alCall(alGetSourcei, source, AL_SOURCE_STATE, &state);
 	}
