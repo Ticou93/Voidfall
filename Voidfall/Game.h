@@ -13,7 +13,8 @@
 #include <bgfx/platform.h>
 //#include <bgfx/bgfx_utils.h>
 
-
+// Shader
+#include "shader.h"
 
 // BX
 #include <bx/math.h>

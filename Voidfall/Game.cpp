@@ -3,7 +3,6 @@
 Game::Game() {}
 Game::~Game() {}
 
-
 struct PosColorVertex{
 	float x;
 	float y;
@@ -82,8 +81,8 @@ void Game::init(const char *title, uint16_t xpos, uint16_t ypos, uint16_t width,
 	vbh = bgfx::createVertexBuffer(bgfx::makeRef(cubeVertices, sizeof(cubeVertices)), vl);
 	ibh = bgfx::createIndexBuffer(bgfx::makeRef(cubeTriList, sizeof(cubeTriList)));
 
-	vsh = loadShader("vs_cubes.bin");
-	fsh = loadShader("fs_cubes.bin");
+	vsh = Shader::loadShader("vs_cubes.bin");
+	fsh = Shader::loadShader("fs_cubes.bin");
 	program = bgfx::createProgram(vsh, fsh, true);
 }
 
