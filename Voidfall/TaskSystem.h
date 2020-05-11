@@ -6,12 +6,15 @@
 #include <functional>
 #include <algorithm>
 #include <condition_variable>
+#include <cassert>
 //#include "debug.h"
 
 
 //Find out our count for system cores(including virtual ones) and suggested number of threads
+const uint64_t MIN_THREADS = 1; // should not be changed, hack-y way to make uint64_t behave with
+                                // GCC and MSVC.
 const uint64_t SYSTEM_NUMCORES = std::thread::hardware_concurrency() - 1;
-const uint64_t SYSTEM_NUM_HW_THREADS = std::max(1ull, SYSTEM_NUMCORES);
+const uint64_t SYSTEM_NUM_HW_THREADS = std::max(MIN_THREADS, SYSTEM_NUMCORES);
 
 const uint64_t TASKLINEBUFFERSIZE=1024;
 
@@ -23,17 +26,14 @@ using BufferFunctionType = std::function<void()>;
 #endif
 
 #ifdef __linux__
-//#include <pthread.h>
+#include <pthread.h>
 #endif
 
+#ifdef _WIN32
 static uint64_t GetCurrentThreadProcessorNumber() {
-#ifdef _WIN32	
 	return (uint64_t)GetCurrentProcessorNumber();
-#endif
-#ifdef __linux__
-	return 0;
-#endif
 }
+#endif
 
 #include "CicularFIFO.h"
 
@@ -61,11 +61,12 @@ void LockThreadToCore(std::thread::native_handle_type a_handle, uint64_t a_core)
 #endif //_WIN32
 #ifdef __linux__
 	////UNTESTED
-	//cpu_set_t cpuset;
-	//CPU_ZERO(&cpuset);
-	//CPU_SET(m_threadid, &cpuset);
+	cpu_set_t cpuset;
+	CPU_ZERO(&cpuset);
+	CPU_SET(a_core, &cpuset);
 	//int rc = pthread_setaffinity_np(m_thread.native_handle(), sizeof(cpu_set_t), &cpuset);
-	//assert(rc != 0);
+	int rc = pthread_setaffinity_np(a_handle, sizeof(cpu_set_t), &cpuset);
+	assert(rc != 0);
 #endif
 }
 
@@ -96,16 +97,22 @@ public:
 		m_thread.join();
 	}
 #ifdef _DEBUG
-	//Show thread info runtime
-	//void PushThreadDataToConsole() {
-	//	std::this_thread::sleep_for(200ms);
-	//	Push([=](){
-	//		g_debugmutex.lock();
-	//		cout << "Taskline ID:" << this->m_tlid << " NID:" << std::this_thread::get_id() << " running on core " << GetCurrentThreadProcessorNumber() << endl;
-	//		g_debugmutex.unlock();
-	//		std::this_thread::sleep_for(200ms);
-	//	});
-	//}
+	Show thread info runtime
+	void PushThreadDataToConsole() {
+		std::this_thread::sleep_for(200ms);
+		Push([=](){
+			g_debugmutex.lock();
+#   ifdef __WIN32
+			cout << "Taskline ID:" << this->m_tlid << " NID:" << std::this_thread::get_id() << " running on core " << GetCurrentThreadProcessorNumber() << endl;
+#   endif
+#   ifdef __linux__
+			cout << "Taskline ID:" << this->m_tlid << " NID:" << std::this_thread::get_id() << " running on core " << getcpu() << endl;
+#   endif
+	        return (uint64_t)getcpu(cpu, node, tcache);
+			g_debugmutex.unlock();
+			std::this_thread::sleep_for(200ms);
+		});
+	}
 #endif
 	//Is the taskline done with all tasks
 	inline bool IsDone() const {return m_finishedtaskscount.load(std::memory_order_acquire) == m_senttaskscount;}
@@ -166,7 +173,7 @@ public:
 		//Naive load balancing, iterate through the tasklines equally
 		++m_lasttasklineindex;//Add one
 		if (m_lasttasklineindex >= m_tasklinecount) m_lasttasklineindex = 0;//Go back to first
-		
+
 		while (m_tasklines[m_lasttasklineindex].Dispatch(a_task) == false) {
 			++m_lasttasklineindex;
 			if (m_lasttasklineindex >= m_tasklinecount) m_lasttasklineindex = 0;//Go back to first
@@ -177,7 +184,7 @@ public:
 	}
 
 	////Allows a taskline argument "recommendation" to directly work with a thread. Not recommended at this time as it messes up any load balancing
-	//inline TaskID Execute(uint64_t a_tlid, BufferFunctionType a_task) {		
+	//inline TaskID Execute(uint64_t a_tlid, BufferFunctionType a_task) {
 	//	m_lasttasklineindex = a_tlid;
 	//	if (m_lasttasklineindex >= m_tasklinecount) m_lasttasklineindex = 0;
 
