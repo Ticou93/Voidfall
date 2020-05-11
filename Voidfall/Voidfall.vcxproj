@@ -112,7 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\build\glfw\src\Debug;$(SolutionDir)\build\bgfx\Debug;$(SolutionDir)build\openal-soft\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\build\deps\glfw\src\Debug;$(SolutionDir)\build\deps\bgfx\Debug;$(SolutionDir)\build\deps\openal-soft\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;bgfx.lib;bx.lib;bimg.lib;astc-codec.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerbose</ShowProgress>
     </Link>

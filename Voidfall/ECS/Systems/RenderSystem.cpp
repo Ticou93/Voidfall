@@ -78,14 +78,18 @@ void RenderSystem::Init() {
 
 	vbh = bgfx::createVertexBuffer(bgfx::makeRef(cubeVertices, sizeof(cubeVertices)), vl);
 	ibh = bgfx::createIndexBuffer(bgfx::makeRef(cubeTriList, sizeof(cubeTriList)));
-
+#if _WIN32
+	vsh = Shader::loadShader("vs_cubes.bin");
+	fsh = Shader::loadShader("fs_cubes.bin");
+#elif __linux__
 	vsh = Shader::loadShader("../../shaders/glsl/vs_cubes.bin");
 	fsh = Shader::loadShader("../../shaders/glsl/fs_cubes.bin");
+#endif
 	program = bgfx::createProgram(vsh, fsh, true);
 
 }
 
-void RenderSystem::Update(float dt) {
+void RenderSystem::Update(float dt) {	
 	const bx::Vec3 at = { 0.0f, 0.0f,  0.0f };
 	const bx::Vec3 eye = { 0.0f, 0.0f, -5.0f };
 	float view[16];
