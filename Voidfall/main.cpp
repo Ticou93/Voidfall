@@ -3,6 +3,7 @@
 #include "ECS/Core/Coordinator.h"
 #include "ECS/Components/Renderable.h"
 #include "ECS/Systems/RenderSystem.h"
+#include "TaskSystem.cpp"
 
 WindowManager* wm = nullptr;
 Audio* audio = nullptr;

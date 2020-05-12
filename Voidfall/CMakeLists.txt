@@ -5,6 +5,10 @@ ADD_EXECUTABLE(Voidfall
     Audio.cpp
     WindowManager.cpp
     ECS/Systems/RenderSystem.cpp
-    tools/shaderHandler.h)
+    tools/shaderHandler.h
+    #debug.h
+    CircularFIFO.h
+    TaskSystem.h
+    TaskSystem.cpp)
 TARGET_LINK_LIBRARIES(Voidfall deps)
 
