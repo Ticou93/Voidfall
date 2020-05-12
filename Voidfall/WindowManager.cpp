@@ -54,6 +54,8 @@ void WindowManager::Init(const char* title, uint16_t width, uint16_t height) {
 		isRunning = false;
 		return;
 	}
+
+	bgfx::setDebug(debug);
 }
 
 

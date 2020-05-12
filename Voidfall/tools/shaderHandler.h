@@ -11,7 +11,7 @@ class Shader {
 public:
     static bgfx::ShaderHandle loadShader(const char* FILENAME)
     {
-        const char* shaderPath;
+        const char* shaderPath = nullptr;
 
         switch (bgfx::getRendererType()) {
         case bgfx::RendererType::Noop:
