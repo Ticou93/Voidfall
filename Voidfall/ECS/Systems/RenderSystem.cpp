@@ -1,13 +1,4 @@
 #include "RenderSystem.h"
-//#include "../Core/Coordinator.h"
-//#include "bgfx/bgfx.h"
-//#include "bgfx/bgfx_utils.h"
-//#include "bgfx/platform.h"
-//#include "../Components/Colour.h"
-//#include "../Core/Coordinator.h"
-//#include "../../tools/shaderHandler.h"
-//#include "../Components/Renderable.h"
-//#include <iostream>
 
 extern Coordinator gCoord;
 
@@ -29,11 +20,12 @@ static const uint16_t cubeTriList[] =
 	6, 3, 7,
 };
 
-void RenderSystem::Init() {
+void RenderSystem::Init(uint16_t width, uint16_t height) {
+    this->width = width;
+    this->height = height;
 
 	// create entity mCube
 	mCube = gCoord.CreateEntity();
-
 
 	// Create component that covers all the cases of angles for triangles
 	gCoord.AddComponent(
@@ -51,8 +43,6 @@ void RenderSystem::Init() {
 
 				-1.0f, -1.0f, -1.0f, uint32_t(0x614234),
 				 1.0f, -1.0f, -1.0f, uint32_t(0x34613F),
-
-
 			}
 		}
 	);
@@ -69,7 +59,7 @@ void RenderSystem::Init() {
 	}
 
 	// Background
-	bgfx::setViewRect(0, 0, 0, uint16_t(1280), uint16_t(720));
+	bgfx::setViewRect(0, 0, 0, width, height);
 
 	// Clear the view rect
 	bgfx::setViewClear(0,
@@ -78,15 +68,12 @@ void RenderSystem::Init() {
 
 	vbh = bgfx::createVertexBuffer(bgfx::makeRef(cubeVertices, sizeof(cubeVertices)), vl);
 	ibh = bgfx::createIndexBuffer(bgfx::makeRef(cubeTriList, sizeof(cubeTriList)));
-#if _WIN32
+
+
 	vsh = Shader::loadShader("vs_cubes.bin");
 	fsh = Shader::loadShader("fs_cubes.bin");
-#elif __linux__
-	vsh = Shader::loadShader("../../shaders/glsl/vs_cubes.bin");
-	fsh = Shader::loadShader("../../shaders/glsl/fs_cubes.bin");
-#endif
+    std::cout << "Succesfully loaded shaders" << std::endl;
 	program = bgfx::createProgram(vsh, fsh, true);
-
 }
 
 void RenderSystem::Update(float dt) {
@@ -95,7 +82,7 @@ void RenderSystem::Update(float dt) {
 	float view[16];
 	bx::mtxLookAt(view, eye, at);
 	float proj[16];
-	bx::mtxProj(proj, 60.0f, float(1270) / float(720), 0.1f, 100.0f, bgfx::getCaps()->homogeneousDepth);
+	bx::mtxProj(proj, 60.0f, float(this->width-10) / float(this->height), 0.1f, 100.0f, bgfx::getCaps()->homogeneousDepth);
 	bgfx::setViewTransform(0, view, proj);
 
 	bgfx::setVertexBuffer(0, vbh);
@@ -103,7 +90,7 @@ void RenderSystem::Update(float dt) {
 
 	bgfx::setViewTransform(0, view, proj);
 	float mtx[16];
-	bx::mtxRotateXY(mtx, dt * 0.01f, dt * 0.01f);
+	bx::mtxRotateXY(mtx, dt * 0.1f, dt * 0.1f);
 	bgfx::setTransform(mtx);
 	std::cout << dt << std::endl;
 
