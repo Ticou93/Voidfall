@@ -378,4 +378,7 @@ _deps
 Voidfall/Voidfall
 build/
 **/.vs/
+**/.vs/
+**/*vcxproj.user
+deps/bgfx/generated/
 
