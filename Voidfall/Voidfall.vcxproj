@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="CicularFIFO.h" />
     <ClInclude Include="ECS\Components\Colour.h" />
     <ClInclude Include="ECS\Components\Renderable.h" />
     <ClInclude Include="ECS\Core\ComponentArray.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="ECS\Core\SystemManager.h" />
     <ClInclude Include="ECS\Core\Types.h" />
     <ClInclude Include="ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="TaskSystem.h" />
     <ClInclude Include="tools\shaderHandler.h" />
     <ClInclude Include="WindowManager.h" />
   </ItemGroup>
