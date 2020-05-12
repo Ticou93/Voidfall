@@ -44,10 +44,9 @@ void WindowManager::Init(const char* title, uint16_t width, uint16_t height) {
 
 	bgfx::renderFrame();
 
-    bgfx::setDebug(debug);
-
 	if (bgfx::init(init))
 	{
+        bgfx::setDebug(debug);
 		std::cout << "BGFX Initialized Successfully" << std::endl;
 		isRunning = true;
 	}

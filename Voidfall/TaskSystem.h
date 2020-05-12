@@ -3,12 +3,13 @@
 #include <iostream>
 #include <thread>
 #include <atomic>
-#include "CicularFIFO.h"
+#include "CircularFIFO.h"
 #include <functional>
 #include <algorithm>
 #include <condition_variable>
-#include "debug.h"
-
+//#include "debug.h"
+#include <cassert>
+#include <mutex>
 
 //Find out our count for system cores(including virtual ones) and suggested number of threads
 const unsigned int SYSTEM_NUMCORES = std::thread::hardware_concurrency() - 1;
@@ -23,23 +24,16 @@ constexpr unsigned int THREADBUFFERSIZE=1024;
 #include <sstream>
 #endif
 
-#ifdef _UNIX
-//#include <pthread.h>
+#ifdef __linux__
+#include <pthread.h>
 #endif
-
-static int GetCurrentThreadProcessorNumber() {
-#ifdef _WIN32	
-	return (int)GetCurrentProcessorNumber();
-#endif
-#ifdef _UNIX
-	return 0;
-#endif
-}
 
 using namespace std;
 
 class Taskline{
 public:
+    std::mutex g_debugmutex;
+
 	Taskline() : m_threadid(0){}
 
 	void Engage(unsigned int a_threadid, bool a_setaffinity = false){
@@ -58,18 +52,17 @@ public:
 			wss << "Taskline: " << m_threadid;
 			HRESULT hr = SetThreadDescription(handle, wss.str().c_str());
 			assert(SUCCEEDED(hr));
-#endif //_WIN32
-#ifdef _UNIX
-			////UNTESTED
-			//cpu_set_t cpuset;
-			//CPU_ZERO(&cpuset);
-			//CPU_SET(m_threadid, &cpuset);
-			//int rc = pthread_setaffinity_np(m_thread.native_handle(), sizeof(cpu_set_t), &cpuset);
-			//assert(rc != 0);
+#endif
+#ifdef __linux__
+			cpu_set_t cpuset;
+			CPU_ZERO(&cpuset);
+			CPU_SET(m_threadid, &cpuset);
+			int rc = pthread_setaffinity_np(m_thread.native_handle(), sizeof(cpu_set_t), &cpuset);
+			assert(rc != 0);
 #endif
 		}
 #ifdef _DEBUG
-		//PushThreadDataToConsole();
+		PushThreadDataToConsole();
 #endif
 	}
 
@@ -87,16 +80,27 @@ public:
 		m_thread.join();
 	}
 
+#ifdef _DEBUG
 	//Show thread info runtime
 	void PushThreadDataToConsole() {
 		std::this_thread::sleep_for(200ms);
 		Push([=](){
 			g_debugmutex.lock();
-			cout << "Taskline TID:" << this->m_threadid << " NID:" << std::this_thread::get_id() << " running on core " << GetCurrentThreadProcessorNumber() << endl;
+#ifdef _WIN32
+			std::cout << "Taskline TID:" << this->m_threadid << " NID:" << std::this_thread::get_id() << " running on core " << (int)GetCurrentProcessorNumber() << std::endl;
+#endif
+#ifdef __linux__
+            unsigned int cpu;
+            unsigned int node;
+            getcpu(&cpu, &node);
+		    std::cout << "Taskline TID:" << this->m_threadid << " NID:" << std::this_thread::get_id() << " running on core " << cpu << " and node " << node << std::endl;
+#endif
 			g_debugmutex.unlock();
 			std::this_thread::sleep_for(200ms);
 		});
 	}
+#endif
+
 protected:
 	//Execution scope call!
 	void __threadexecute(){
@@ -129,7 +133,7 @@ public:
 	void Init(const unsigned int a_numthreads = SYSTEM_NUM_HW_THREADS){
 		m_tasklinecount = a_numthreads;
 		m_tasklines = new Taskline[m_tasklinecount];
-		
+
 		//Start all threads
 		for (unsigned int threadid = 0; threadid < m_tasklinecount; ++threadid) {
 			m_tasklines[threadid].Engage(threadid);

@@ -1,5 +1,6 @@
 #pragma once
 
+#define _DEBUG
 #ifdef _DEBUG
 
 #include <assert.h>
@@ -8,7 +9,6 @@
 #include <iostream>
 #include <mutex>
 #include <string>
-
 
 std::mutex g_debugmutex;
 
