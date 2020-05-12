@@ -6,19 +6,21 @@ WindowManager::WindowManager() {}
 WindowManager::~WindowManager() {}
 
 // Initializes the render window with GLFW and BGFX
-void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
+void WindowManager::Init(const char* title, uint16_t width, uint16_t height) {
 
 	if (glfwInit())
 	{
 		std::cout << "GLFW Initialized Successfully." << std::endl;
-		window = glfwCreateWindow(_width, _height, title, NULL, NULL);
+		window = glfwCreateWindow(width, height, title, NULL, NULL);
 	}
 	else
 	{
 		return;
 	}
 
-	debug = BGFX_DEBUG_NONE;
+	//debug = BGFX_DEBUG_NONE;
+	//debug = BGFX_DEBUG_TEXT;
+	debug = BGFX_DEBUG_TEXT | BGFX_DEBUG_STATS;
 	reset = BGFX_RESET_VSYNC;
 
 #if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
@@ -29,16 +31,20 @@ void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
 #elif BX_PLATFORM_OSX
 	pd.nwh = glfwGetCocoaWindow(window);
 #endif
-
-
-	// Set data on which platform it is that runs bgfx.
-	bgfx::setPlatformData(pd);
+    pd.context = NULL;
+    pd.backBuffer = NULL;
+    pd.backBufferDS = NULL;
 
 	// Initialize bgfx
 	bgfx::Init init;
-	init.resolution.width = _width;
-	init.resolution.height = _height;
+	init.resolution.width = width;
+	init.resolution.height = height;
+    init.resolution.reset = reset;
+    init.platformData = pd;
 
+	bgfx::renderFrame();
+
+    bgfx::setDebug(debug);
 
 	if (bgfx::init(init))
 	{
@@ -61,7 +67,6 @@ void WindowManager::handleEvents()
 }
 
 void WindowManager::update() {
-	bgfx::renderFrame();
 }
 
 void WindowManager::clean() {
