@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstring>
 #include <iostream>
+#include <exception>
 #include <bgfx/bgfx.h>
 #include <bgfx/platform.h>
 
@@ -10,7 +11,7 @@ class Shader {
 public:
     static bgfx::ShaderHandle loadShader(const char* FILENAME)
     {
-        const char* shaderPath = "???";
+        const char* shaderPath;
 
         switch (bgfx::getRendererType()) {
         case bgfx::RendererType::Noop:
@@ -22,6 +23,11 @@ public:
         case bgfx::RendererType::OpenGL:     shaderPath = "shaders/glsl/";  break;
         case bgfx::RendererType::OpenGLES:   shaderPath = "shaders/essl/";  break;
         case bgfx::RendererType::Vulkan:     shaderPath = "shaders/spirv/"; break;
+        }
+
+        if (!shaderPath) {
+            std::cerr << "Failed to load shader files at ./shaders" << std::endl;
+            throw std::exception();
         }
 
         size_t shaderLen = strlen(shaderPath);
