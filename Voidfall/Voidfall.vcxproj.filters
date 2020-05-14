@@ -68,7 +68,7 @@
     <ClInclude Include="ECS\Components\Renderable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CicularFIFO.h">
+    <ClInclude Include="CircularFIFO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TaskSystem.h">
