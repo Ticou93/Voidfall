@@ -6,7 +6,7 @@ ADD_EXECUTABLE(Voidfall
     WindowManager.cpp
     ECS/Systems/RenderSystem.cpp
     tools/shaderHandler.h
-    #debug.h
+    Debug.h
     CircularFIFO.h
     TaskSystem.h
     TaskSystem.cpp)
