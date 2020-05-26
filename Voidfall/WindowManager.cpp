@@ -30,8 +30,8 @@ void WindowManager::Init(const char* title, uint16_t width, uint16_t height) {
 	pd.nwh = glfwGetWin32Window(window);
 #elif BX_PLATFORM_OSX
 	pd.nwh = glfwGetCocoaWindow(window);
-#endif
-    pd.context = NULL;
+
+  pd.context = NULL;
     pd.backBuffer = NULL;
     pd.backBufferDS = NULL;
 
