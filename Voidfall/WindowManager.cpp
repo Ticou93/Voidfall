@@ -38,14 +38,13 @@ void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
 #endif	
 	
 
-	// Set data on which platform it is that runs bgfx.
-	bgfx::setPlatformData(pd);
-	bgfx::renderFrame();
 
 	// Initialize bgfx
 	bgfx::Init init;
+	init.platformData = pd;
 	init.resolution.width = _width;
 	init.resolution.height = _height;
+	init.resolution.reset = BGFX_RESET_VSYNC;
 
 
 	if (bgfx::init(init))
