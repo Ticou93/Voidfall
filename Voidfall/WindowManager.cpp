@@ -1,9 +1,4 @@
 #include "WindowManager.h"
-#include "ECS/Core/Coordinator.h"
-#include "ECS/Components/Colour.h"
-#include "ECS/Systems/RenderSystem.h"
-#include <random>
-
 
 extern Coordinator gCoord;
 
@@ -11,44 +6,47 @@ WindowManager::WindowManager() {}
 WindowManager::~WindowManager() {}
 
 // Initializes the render window with GLFW and BGFX
-void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
+void WindowManager::Init(const char* title, uint16_t width, uint16_t height) {
 
 	if (glfwInit())
 	{
 		std::cout << "GLFW Initialized Successfully." << std::endl;
-		window = glfwCreateWindow(_width, _height, title, NULL, NULL);
+		window = glfwCreateWindow(width, height, title, NULL, NULL);
 	}
 	else
 	{
 		return;
 	}
 
-	debug = BGFX_DEBUG_NONE;
+	//debug = BGFX_DEBUG_NONE;
+	//debug = BGFX_DEBUG_TEXT;
+	debug = BGFX_DEBUG_TEXT | BGFX_DEBUG_STATS;
 	reset = BGFX_RESET_VSYNC;
 
-	
-
 #if BX_PLATFORM_LINUX || BX_PLATFORM_BSD
-	pd.ndt = glfwGetX11Display();
-	pd.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
+    pd.ndt = glfwGetX11Display();
+    pd.nwh = (void*)(uintptr_t)glfwGetX11Window(window);
 #elif BX_PLATFORM_WINDOWS
 	pd.nwh = glfwGetWin32Window(window);
 #elif BX_PLATFORM_OSX
 	pd.nwh = glfwGetCocoaWindow(window);
-#endif	
-	
 
+  pd.context = NULL;
+    pd.backBuffer = NULL;
+    pd.backBufferDS = NULL;
 
 	// Initialize bgfx
 	bgfx::Init init;
-	init.platformData = pd;
-	init.resolution.width = _width;
-	init.resolution.height = _height;
-	init.resolution.reset = BGFX_RESET_VSYNC;
+	init.resolution.width = width;
+	init.resolution.height = height;
+    init.resolution.reset = reset;
+    init.platformData = pd;
 
+	bgfx::renderFrame();
 
 	if (bgfx::init(init))
 	{
+        bgfx::setDebug(debug);
 		std::cout << "BGFX Initialized Successfully" << std::endl;
 		isRunning = true;
 	}
@@ -56,6 +54,8 @@ void WindowManager::Init(const char* title, uint16_t _width, uint16_t _height) {
 		isRunning = false;
 		return;
 	}
+
+	bgfx::setDebug(debug);
 }
 
 
@@ -67,7 +67,8 @@ void WindowManager::handleEvents()
 	}
 }
 
-void WindowManager::update() {}
+void WindowManager::update() {
+}
 
 void WindowManager::clean() {
 	bgfx::shutdown();
