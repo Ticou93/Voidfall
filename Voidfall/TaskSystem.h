@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <thread>
 #include <atomic>
 #include <functional>
 #include <algorithm>
@@ -39,7 +38,7 @@ static uint64_t GetCurrentThreadProcessorNumber() {
 #endif
 }
 
-#include "CicularFIFO.h"
+#include "CircularFIFO.h"
 
 using namespace std;
 
@@ -52,7 +51,7 @@ struct TaskID {
 //Possibly implement counter == 0 as "done" as well, allowing us to reset counter very easily.
 //Not sure if necessary though, as data is likely being read in 128bit length already
 
-void LockThreadToCore(std::thread::native_handle_type a_handle, uint64_t a_core) {
+inline void LockThreadToCore(std::thread::native_handle_type a_handle, uint64_t a_core) {
 #ifdef _WIN32 //Windows specific thread affinity
 	HANDLE handle = (HANDLE)a_handle; // m_thread.native_handle();
 	// Put each thread on to dedicated core

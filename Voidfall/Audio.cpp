@@ -346,7 +346,7 @@ int Audio::playSound(std::string soundToPlay)
 	ALuint source;
 	alCall(alGenSources, 1, &source);
 	alCall(alSourcef, source, AL_PITCH, 1);
-	alCall(alSourcef, source, AL_GAIN, 1.0f);
+	alCall(alSourcef, source, AL_GAIN, 0.6f);
 	alCall(alSource3f, source, AL_POSITION, 0, 0, 0);
 	alCall(alSource3f, source, AL_VELOCITY, 0, 0, 0);
 	alCall(alSourcei, source, AL_LOOPING, AL_FALSE);

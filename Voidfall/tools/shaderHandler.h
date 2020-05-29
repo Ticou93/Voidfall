@@ -1,6 +1,5 @@
 #pragma once
-
-#include <fstream>
+/*#include <fstream>
 #include <cstring>
 #include <iostream>
 #include <exception>
@@ -49,3 +48,4 @@ public:
     }
 
 };
+*/

@@ -1,27 +1,15 @@
 #pragma once
-#ifndef Game_h
-#define Game_h
 
 #define _CRT_SECURE_NO_DEPRECATE
 #define ENTRY_IMPLEMENT_MAIN_1
 
 // Default c++ headers
 #include <stdio.h>
-#include <iostream>
 #include <random>
+#include "ECS/Systems/RenderSystem.h"
 
-// BGFX
-#include <bgfx/bgfx.h>
-#include <bgfx/platform.h>
-//#include "common.h"
-
-// BIMG
-#include <bimg/decode.h>
-
-// BX
-#include <bx/bx.h>
-#include <bx/math.h>
-#include <bx/uint32_t.h>
+// GLAD
+#include "glad/glad.h"
 
 // GLFW
 #include <GLFW/glfw3.h>
@@ -34,13 +22,6 @@
 #endif
 #include <GLFW/glfw3native.h>
 
-// Other
-#include "ECS/Core/Coordinator.h"
-#include "ECS/Components/Colour.h"
-#include "ECS/Systems/RenderSystem.h"
-//#include "bgfx/bgfx_utils.h"
-
-
 class WindowManager
 {
 
@@ -52,9 +33,10 @@ public:
 
 	void handleEvents();
 	void update();
-	void render();
+	GLFWwindow* GetWindow();
 	void clean();
 	void componentGenerator();
+	RenderSystem AssignRenderer(RenderSystem renderer);
 
 	bool running();
 
@@ -62,19 +44,10 @@ protected:
 
 	bool isRunning;
 	GLFWwindow* window;
-	bgfx::PlatformData pd;
-	bgfx::ProgramHandle program;
-	bgfx::VertexBufferHandle vbh;
-	bgfx::IndexBufferHandle ibh;
-	bgfx::ShaderHandle vsh, fsh;
-	bgfx::TextureHandle mtc;
-	bgfx::UniformHandle stc;
 	float m_xPos;
 	float m_yPos;
 	uint32_t reset;
 	uint32_t debug;
 
 };
-
-#endif /* Game_h */
 
